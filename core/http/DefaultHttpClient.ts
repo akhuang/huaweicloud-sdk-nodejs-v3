@@ -128,7 +128,6 @@ export class DefaultHttpClient implements HttpClient {
                 headers: res.headers
             };
         }).catch((err) => {
-            // TODO:
             DefaultHttpClient.httpResponse = err;
             const errorRespone = this.formatError(err);
             this.logger.error('some error found:', errorRespone);
@@ -164,18 +163,15 @@ export class DefaultHttpClient implements HttpClient {
                 return qsStringify(params);
             },
         };
-        
+
         if (httpRequest.axiosRequestConfig) {
             Object.assign(requestParams, httpRequest.axiosRequestConfig);
         }
 
-        const methods: string[] = ['PUT', 'POST', 'PATCH', 'DELETE'];
-        if (method && methods.indexOf(method.toUpperCase()) !== -1) {
-            requestParams = Object.assign(requestParams, {
-                transformRequest: [this.transformOptions.bind(this)]
-            })
-        }
-        // TODO
+        if (headers['content-type'] === 'multipart/form-data') {
+            requestParams.headers = data.getHeaders();
+        }  
+        
         DefaultHttpClient.httpReqParam = requestParams;
 
         const res: AxiosResponse = await this.axiosInstance(requestParams);
@@ -205,8 +201,11 @@ export class DefaultHttpClient implements HttpClient {
             return data;
         }
 
-        headers['content-type'] = 'application/json';
-        return JSON.stringify(data);
+        if (!headers['content-type']) {
+            headers['content-type'] = 'application/json';
+        }
+
+        return data;
     }
 
     private formatError(error: AxiosError): ExceptionResponse {
