@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright 2023 Huawei Technologies Co.,Ltd.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -22,7 +22,6 @@
 import { HcClient } from "./HcClient";
 import { ICredential } from "./auth/ICredential";
 import { ClientOptions, DefaultHttpClient } from "./http/DefaultHttpClient";
-import { RequiredError } from "./auth/AKSKSigner";
 import { BasicCredentials } from "./auth/BasicCredentials";
 import { GlobalCredentials } from "./auth/GlobalCredentials";
 import { SdkException } from "./exception/SdkException";
@@ -38,13 +37,14 @@ interface CredParams {
 }
 export class ClientBuilder<T> {
     private init: Function;
-    private endpoint?: string;
+    private endpoints?: string[];
     private credential?: ICredential;
     private proxyAgent?: string;
     private credentialType: string[] = ["BasicCredentials", "GlobalCredentials"];
     private envParams: CredParams = process.env;
     private region?: Region;
     private userOptions?: UserOptions;
+    private credentials: { [key: string]: ICredential } = {};
 
     public constructor(init: (hcClient: HcClient) => T, credentialType?: string) {
         this.init = init;
@@ -53,8 +53,13 @@ export class ClientBuilder<T> {
         }
     }
 
-    public withEndpoint(endpoint: string): ClientBuilder<T> {
-        this.endpoint = endpoint;
+    public withEndpoint(endpoint: string | string[]): ClientBuilder<T> {
+        this.endpoints = [];
+        if (typeof endpoint === 'string') {
+            this.endpoints.push(endpoint);
+        } else if (Array.isArray(endpoint)) {
+            this.endpoints.push(...endpoint);
+        }
         return this;
     }
 
@@ -102,85 +107,70 @@ export class ClientBuilder<T> {
             throw new SdkException(`credential can not be null, ${this.credentialType}Credential objects are required`);
         }
 
-        const client = new DefaultHttpClient(axiosOptions);
+        const client = new DefaultHttpClient(axiosOptions, this.endpoints);
         const hcClient = new HcClient(client);
-        hcClient.withEndpoint(this.endpoint).withCredential(this.credential);
-        if (this.region) {
-            hcClient.withRegion(this.region);
-        }
+
+        this.region && hcClient.withRegion(this.region);
+
+        hcClient.withCredential(this.credential);
         return this.init(hcClient);
     }
 
     /**
-     * 从环境变量获取 HUAWEICLOUD_SDK_TYPE 
-     * 环境变量里没有则使用 credentialType[0]
-     * 生成credential实体
-     * 从环境变量获取 AK SK projectId/domainId 进行赋值， 如果环境变量是GlobalCredentials，则赋值domainId
-     * @returns Credentials
+     * Get 'HUAWEICLOUD_SDK_TYPE' from environment variables
+     * If the variable does not exist, use the first credential type
+     * Generate credential entity
+     * Assign AK, SK, projectId/domainId from the environment variables
+     * If the environment variable is 'GlobalCredentials', assign the domainId
+     * @returns ICredential
      */
-    public getCredentialFromEnvironment(): ICredential {
+    private getCredentialFromEnvironment(): ICredential {
         const sdkType: any = process.env.HUAWEICLOUD_SDK_TYPE;
         const credentialTYPE = this.whichCredential(sdkType)
         return this.getInputParamCredential(credentialTYPE, this.envParams);
     }
 
-    public whichCredential(sdkType: string) {
-        let credentialTYPE;
-        if (sdkType) {
-            switch (sdkType) {
-                case 'BasicCredentials':
-                    credentialTYPE = new BasicCredentials();
-                    break;
-                case 'GlobalCredentials':
-                    credentialTYPE = new GlobalCredentials();
-                    break;
-                default:
-                    const obj = {};
-                    const definedCredPath = path.join(this.init().getPath(), `${sdkType}`);
-                    if (!obj[sdkType]) {
-                        credentialTYPE = require(definedCredPath);
-                        // 多加一层
-                        obj[sdkType] = credentialTYPE[sdkType];
-                    }
-                    credentialTYPE = new obj[sdkType]();
-                    break;
-            }
-        } else {
-            // 默认是basic
-            credentialTYPE = new BasicCredentials();
+    private whichCredential(sdkType: string) {
+        if (!sdkType) {
+            // default is BasicCredentials
+            return new BasicCredentials();
         }
-        return credentialTYPE;
-    }
 
-    public getInputParamCredential(CredentialsType: any, credential: CredParams) {
-        // 判断是否有_
-        let hash = {};
-        for (let key in credential) {
-            if (key.indexOf("HUAWEICLOUD_SDK_") == 0) {
-                const value = credential[key]
-                key = key.substring(16);
-                if (key.indexOf('_') == -1) {
-                    key = key.toLowerCase();
-                    key = 'with' + key.charAt(0).toUpperCase() + key.slice(1);
-                } else {
-                    const arr = key.split('_').map(item => {
-                        item = item.toLowerCase();
-                        return item.charAt(0).toUpperCase() + item.slice(1);
-                    })
-                    if (Array.isArray(arr)) {
-                        key = 'with' + arr.join("");
-                    }
+        switch (sdkType) {
+            case 'BasicCredentials':
+                return new BasicCredentials();
+            case 'GlobalCredentials':
+                return new GlobalCredentials();
+            default:
+                if (this.credentials[sdkType]) {
+                    return this.credentials[sdkType];
                 }
-                hash[key] = value
-            }
+
+                const definedCredPath = path.join(this.init().getPath(), `${sdkType}`);
+                const credentialTYPE = require(definedCredPath)[sdkType];
+                this.credentials[sdkType] = new credentialTYPE();
+                return this.credentials[sdkType];
         }
-        credential = hash;
-        for (const key in credential) {
-            if (CredentialsType[key]) {
-                CredentialsType[key](credential[key]);
-            }
-        }
-        return CredentialsType;
     }
 
+    private getInputParamCredential(CredentialsType: any, credential: CredParams) {
+        const hash = Object.entries(credential)
+            .filter(([key]) => key.startsWith("HUAWEICLOUD_SDK_"))
+            .reduce((acc, [key, value]) => {
+                const formattedKey = key
+                    .substring(16)
+                    .split("_")
+                    .map((item, index) =>
+                        index === 0
+                            ? item.toLowerCase()
+                            : item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
+                    )
+                    .join("");
+                acc[formattedKey] = value;
+                return acc;
+            }, {});
+
+        const updatedCredentials = Object.assign({}, CredentialsType, hash);
+        return updatedCredentials;
+    }
 }

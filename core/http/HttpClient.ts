@@ -19,9 +19,10 @@
  * under the License.
  */
 
+import { SdkResponse } from "../SdkResponse";
 import { DefaultHttpResponse } from "./DefaultHttpResponse";
 import { IHttpRequest } from "./IHttpRequest";
 
 export interface HttpClient {
-    sendRequest<T>(httpRequest: IHttpRequest): Promise<DefaultHttpResponse<T>>;
+    sendRequest<T extends SdkResponse> (httpRequest: IHttpRequest): Promise<DefaultHttpResponse<T>>;
 }

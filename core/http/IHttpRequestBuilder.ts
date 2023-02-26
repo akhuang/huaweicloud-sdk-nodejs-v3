@@ -31,9 +31,9 @@ export class HttpRequestBuilder {
   public build(): IHttpRequest {
     return this.httpRequest;
   }
-
-  public withEndpoint(value: string) {
-    this.httpRequest.endpoint = value;
+  
+  public withUrl(value?: string) {
+    this.httpRequest.url = value;
     return this;
   }
 

@@ -21,10 +21,21 @@
 
 export class Region {
     id: string;
-    endpoint: string;
 
-    constructor(id: string, endpoint: string) {
+    endpoints: string[];
+
+     /**
+     * Constructor for creating a Region instance.
+     * @param {string} id - the region ID
+     * @param {string|string[]} endpoint - the endpoint URL(s) for this region
+     */
+    constructor(id: string, endpoint: string | string[]) {
         this.id = id;
-        this.endpoint = endpoint;
+        this.endpoints = [];
+        if (typeof endpoint === 'string') {
+            this.endpoints.push(endpoint);
+        } else if (Array.isArray(endpoint)) {
+            this.endpoints.push(...endpoint);
+        }
     }
 }

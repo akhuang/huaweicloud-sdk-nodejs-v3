@@ -19,7 +19,7 @@
  * under the License.
  */
 
-import { ICredential } from "./ICredential";
+import { ICredential, isJsonContentType } from "./ICredential";
 import { IHttpRequest } from "../http/IHttpRequest";
 import { AKSKSigner } from "./AKSKSigner";
 import { HttpRequestBuilder } from "../http/IHttpRequestBuilder";
@@ -101,8 +101,8 @@ export class BasicCredentials implements ICredential {
 
         // 替换所有的path参数
         if (this.projectId) {
-            let url = this.parsePath(httpRequest.endpoint, this.getPathParams());
-            builder.withEndpoint(url);
+            let url = this.parsePath(httpRequest.url, this.getPathParams());
+            builder.withUrl(url);
         }
 
         if (this.projectId) {
@@ -113,11 +113,7 @@ export class BasicCredentials implements ICredential {
             builder.addHeaders("X-Security-Token", this.securityToken);
         }
 
-        if (httpRequest.headers
-            && ((Object.prototype.hasOwnProperty.call(httpRequest.headers, "content-type")
-                && httpRequest.headers!["content-type"] !== "application/json") ||
-                (Object.prototype.hasOwnProperty.call(httpRequest.headers, "Content-Type")
-                    && httpRequest.headers!["Content-Type"] !== "application/json"))) {
+        if (!isJsonContentType(httpRequest.headers)) {
             builder.addHeaders("X-Sdk-Content-Sha256", "UNSIGNED-PAYLOAD");
         }
 
@@ -130,23 +126,23 @@ export class BasicCredentials implements ICredential {
         return Object.assign(httpRequest, builder.build());
     }
 
-    processAuthParams(hcClient: HcClient, region: string): Promise<ICredential> {
+    public async processAuthParams(hcClient: HcClient, region: string): Promise<ICredential> {
         if (this.projectId) {
-            return Promise.resolve(this);
+            return this;
         }
 
         const authCacheInstance = AuthCache.instance();
         const akWithName = this.getAk() + region;
-        if (authCacheInstance.getCache(akWithName)) {
-            this.projectId = authCacheInstance.getCache(akWithName);
-            return Promise.resolve(this);
+        const cachedProjectId = authCacheInstance.getCache(akWithName);
+        if (cachedProjectId) {
+            this.projectId = cachedProjectId;
+            return this;
         }
 
-        return new IamService(hcClient, this.iamEndpoint).getProjecId(region).then(projectId => {
-            authCacheInstance.putCache(akWithName, projectId);
-            this.projectId = projectId;
-            return this;
-        });
+        const projectId = await new IamService(hcClient, this.iamEndpoint).getProjecId(region);
+        authCacheInstance.putCache(akWithName, projectId);
+        this.projectId = projectId;
+        return this;
     }
 
     parsePath(path: string | undefined, params: any): string {

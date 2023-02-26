@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright 2023 Huawei Technologies Co.,Ltd.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,16 +30,25 @@ import { DefaultHttpResponse } from "./http/DefaultHttpResponse";
 import { Region } from "./region/region";
 import { SdkStreamResponse } from "./SdkStreamResponse";
 
+export interface HttpRequestOptions {
+    method: string;
+    url: string;
+    contentType: string;
+    queryParams: Record<string, any>;
+    pathParams: Record<string, any>;
+    headers: Record<string, string>;
+    data: Record<string, any>;
+}
+
 export class HcClient {
     private httpClient: HttpClient;
-    private endpoint: string | undefined;
-    private credential: ICredential | undefined;
+    private credential?: ICredential;
     private proxyAgent: string = '';
     private static loggerName = 'HcClient';
     private logger: Logger;
-    region?: Region;
+    private region?: Region;
 
-    public constructor(client: HttpClient) {
+    constructor(client: HttpClient) {
         this.httpClient = client;
 
         // Logging
@@ -47,55 +56,49 @@ export class HcClient {
         this.logger.debug('initialized');
     }
 
-    public withEndpoint(endpoint?: string): HcClient {
-        this.endpoint = endpoint;
-        return this;
-    }
-
-    public withCredential(credential?: ICredential): HcClient {
+    public withCredential(credential: ICredential): HcClient {
         this.credential = credential;
         return this;
     }
 
-    public withRegion(region?: Region) {
+    public withRegion(region: Region): HcClient {
         this.region = region;
         return this;
     }
 
-    public withHttpsAgent(proxyAgent: string) {
+    public withHttpsAgent(proxyAgent: string): HcClient {
         this.proxyAgent = proxyAgent;
         return this;
     }
-    public async sendRequest<T extends SdkResponse>(options: any): Promise<any> {
+
+    public async sendRequest<T extends SdkResponse>(options: HttpRequestOptions): Promise<T> {
         this.logger.debug('send request');
 
         const request = await this.buildRequest(options);
-        // @ts-ignore
-        return this.httpClient.sendRequest<T>(request).then(res => {
-            return this.extractResponse<T>(res);
-        }, err => {
-            return ExceptionUtil.generalException(err);
-        });
+
+        try {
+            const response = await this.httpClient.sendRequest<T>(request);
+            return this.extractResponse(response);
+        } catch (error: any) {
+            throw ExceptionUtil.generalException(error);
+        }
     }
 
     private async buildRequest(options: any): Promise<IHttpRequest> {
         if (this.region) {
-            this.endpoint = this.region.endpoint;
             this.credential = await this.credential!.processAuthParams(this, this.region.id);
         }
 
-        let url = this.endpoint + options.url;
-        const pathParams = options.pathParams;
-        Object.keys(pathParams).forEach(x => {
-            url = url.replace("{" + x + "}", pathParams[x]);
+        let url = `${options.url}`;
+        Object.entries(options.pathParams).forEach(([key, value]) => {
+            url = url.replace(`{${key}}`, value + '');
         });
 
-        if (options.method === 'DELETE'
-            && (options.data && (Object.keys(options.data).length <= 0 || options.data.length <= 0))) {
+        if (options.method === 'DELETE' && options.data === undefined) {
             delete options.data;
         }
 
-        if (options.headers && Object.prototype.hasOwnProperty.call(options.headers, "Content-Type")) {
+        if (options.headers?.['Content-Type']) {
             delete options.headers['Content-Type'];
         }
 
@@ -103,17 +106,14 @@ export class HcClient {
             if (!options.headers) {
                 options.headers = {};
             }
-            if (options.contentType.toLowerCase().startsWith("application/json")) {
-                // remove charset
-                options.headers['content-type'] = "application/json";
-            } else {
-                options.headers['content-type'] = options.contentType;
-            }
+            options.headers['content-type'] = options.contentType.toLowerCase().includes('application/json')
+                ? 'application/json'
+                : options.contentType;
         }
 
         const builder = new HttpRequestBuilder();
         let httpRequest = builder
-            .withEndpoint(url)
+            .withUrl(url)
             .withHeaders(options.headers)
             .withMethod(options.method)
             .withPathParams(options.pathParams)
@@ -121,36 +121,30 @@ export class HcClient {
             .withQueryParams(options.queryParams)
             .build();
 
-        // @ts-ignore
-        httpRequest = this.credential.processAuthRequest(httpRequest);
+        httpRequest = this.credential!.processAuthRequest(httpRequest);
         if (options['responseHeaders']) {
             httpRequest['responseHeaders'] = options['responseHeaders'];
         }
         httpRequest.proxy = this.proxyAgent;
-        if(options.axiosRequestConfig){
-            httpRequest.axiosRequestConfig= options.axiosRequestConfig;
+        if (options.axiosRequestConfig) {
+            httpRequest.axiosRequestConfig = options.axiosRequestConfig;
         }
-       
+
         return httpRequest;
     }
 
     private extractResponse<T extends SdkResponse>(result: DefaultHttpResponse<T>): T {
         const headers = result.headers;
-        let contentType = headers['content-type'];
-        contentType = contentType?.toLowerCase();
-        if (contentType
-            && (contentType.startsWith('application/octet-stream')
-                || contentType.startsWith("image")
-                || contentType.startsWith("application/zip"))) {
+        let contentType = headers['content-type']?.toLowerCase();
+        if (/(application\/octet-stream|image|application\/zip)/.test(contentType)) {
             const streamRes = new SdkStreamResponse();
             streamRes.body = result.data;
             streamRes.httpStatusCode = result.statusCode;
             return streamRes as T;
-        } else {
-            const response = result.data instanceof Object ? result.data : {} as T;
-            const sdkRespone = response as SdkResponse;
-            sdkRespone.httpStatusCode = result.statusCode;
-            return sdkRespone as T;
         }
+
+        const response = typeof result.data === 'object' ? result.data : {} as T;
+        response.httpStatusCode = result.statusCode;
+        return response;
     }
 }
