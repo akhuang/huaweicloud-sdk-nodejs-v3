@@ -1,4 +1,4 @@
-import { AKSKSigner } from '../auth/AKSKSigner';
+import { AKSKSigner } from '../../auth/AKSKSigner';
 describe('aksksinger test', () => {
     describe('CanonicalURI', () => {
         test('should return encoded uri', () => {

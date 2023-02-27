@@ -36,6 +36,8 @@ export class DefaultHttpClient implements HttpClient {
     private _axiosInstance: AxiosInstance;
     private _logger: Logger;
     private _defaultOptions: ClientOptions;
+    private readonly maxRetryCount = 1;
+    private retryCount = 0;
     private readonly _DEFAULT_HEADERS = {
         Accept: 'application/json',
         'content-type': 'application/json',
@@ -47,7 +49,7 @@ export class DefaultHttpClient implements HttpClient {
         }
 
         this.endpoints = endpoints;
-        this._defaultOptions = options;
+        this._defaultOptions = options || {};
         this._logger = options.logger || getLogger(DefaultHttpClient.name, options.logLevel || LogLevel.ERROR);
         this._axiosInstance = this._createAxiosInstance();
 
@@ -57,10 +59,11 @@ export class DefaultHttpClient implements HttpClient {
     public async sendRequest<T extends SdkResponse>(
         httpRequest: IHttpRequest): Promise<DefaultHttpResponse<T>> {
         try {
+            this.retryCount = 0;
             const axiosResponse = await this._sendHttpRequest(httpRequest);
             const httpResponse = this._formatHttpResponse<T>(httpRequest, axiosResponse);
             return httpResponse;
-        } catch (error: any) {
+        } catch (error: any) { 
             const exceptionResponse = this._formatExceptionResponse(error);
             this._logger.error('Some error found:', exceptionResponse);
             throw ExceptionUtil.generalException(exceptionResponse);
@@ -109,7 +112,19 @@ export class DefaultHttpClient implements HttpClient {
             },
             async (error: AxiosError) => {
                 // Check whether the error code is 'ECONNABORTED' or 'ECONNREFUSED'
-                if (error.code === 'ECONNABORTED' || error.code === 'ECONNREFUSED') {
+                if (error.code === 'ECONNABORTED' ||
+                    error.code === 'ECONNREFUSED' ||
+                    error.code == 'ECONNRESET') {
+                    if (this.retryCount >= this.maxRetryCount) {
+                        return Promise.reject(error);
+                    }
+
+                    if (this.endpoints.length < 2) {
+                        return Promise.reject(error);
+                    }
+
+                    this.retryCount++;
+
                     // Backup URL
                     const backupUrl = this.endpoints[1];
                     // Set the baseURL of the request to the backup URL
@@ -138,7 +153,7 @@ export class DefaultHttpClient implements HttpClient {
         const responseLength = response.data ? JSON.stringify(response.data).length : 0;
         this._logger.debug(`Response: ${method?.toUpperCase()} ${statusStr} ${url} ${JSON.stringify(headers)} ${responseLength} ${requestId}`);
     }
-    
+
     private async _sendHttpRequest(
         httpRequest: IHttpRequest,
     ): Promise<AxiosResponse> {
@@ -146,7 +161,7 @@ export class DefaultHttpClient implements HttpClient {
         headers = headers || {};
         url = stripTrailingSlash(url);
 
-        addUserAgentHeader(headers, this._defaultOptions.headers['User-Agent']);
+        addUserAgentHeader(headers, this._defaultOptions.headers?.['User-Agent']);
 
         let requestParams: AxiosRequestConfig = {
             url,
@@ -198,7 +213,7 @@ export class DefaultHttpClient implements HttpClient {
             data: error.response ? error.response.data : undefined,
             status: error.response ? error.response.status : undefined,
             headers: error.response ? error.response.headers : undefined,
-            message: error.message || undefined,
+            message: error.message || error.code,
             requestId: error.response?.headers['x-request-id'],
         };
         return transformedResponse;
@@ -209,6 +224,7 @@ function addUserAgentHeader(headers: any, customUserAgent?: string): void {
     if (!headers) {
         return;
     }
+
     const prefix = 'huaweicloud-usdk-nodejs/3.0';
     if (customUserAgent && typeof customUserAgent === 'string') {
         headers['User-Agent'] = `${prefix} ${customUserAgent}`;
