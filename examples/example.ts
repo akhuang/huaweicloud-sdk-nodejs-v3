@@ -1,22 +1,30 @@
-import { DevStarClient } from "@huaweicloud/huaweicloud-sdk-devstar/v1/DevStarClient";
-import { GlobalCredentials } from "@huaweicloud/huaweicloud-sdk-core/auth/GlobalCredentials";
-import { ShowJobDetailRequest } from '@huaweicloud/huaweicloud-sdk-devstar/v1/model/ShowJobDetailRequest';
+import { ListVpcsRequest, VpcClient } from "@huaweicloud/huaweicloud-sdk-vpc";
+import { BasicCredentials } from "@huaweicloud/huaweicloud-sdk-core/auth/BasicCredentials";
 
-const ak: string = "{your ak string}";
-const sk: string = "{your sk string}";
-const domainId: string = "{your domain id}";
-const endpoint: string = "{your endpoint}";
-const jobId: string = "{your job id}";
-const client = DevStarClient.newBuilder()
-    .withCredential(new GlobalCredentials().withAk(ak).withSk(sk).withDomainId(domainId))
-    .withEndpoint(endpoint)
-    .build();
+const ak = process.env.AK;
+const sk = process.env.SK;
+const domainId = process.env.DOMAIN_ID;
+const projectId = process.env.PROJECT_ID;
+
+const endpoint = "https://vpc.cn-east-3.myhuaweicloud.com";
+
+const credentials = new BasicCredentials()
+  .withAk(ak)
+  .withSk(sk)
+  .withProjectId(projectId);
+
+const client = VpcClient.newBuilder()
+  .withCredential(credentials)
+  .withEndpoint(endpoint)
+  .build();
+
 
 (async () => {
   try {
-    const result = await client.showJobDetail(new ShowJobDetailRequest(jobId));
-    console.log("Result:", JSON.stringify(result));
+    const request = new ListVpcsRequest();
+    const result = await client.listVpcs(request);
+    console.log("Result:", JSON.stringify(result, null, 2));
   } catch (error:any) {
-    console.log("Exception:", JSON.stringify(ex));
+    console.error("Exception:", JSON.stringify(error, null, 2));
   }
 })();
