@@ -44,7 +44,7 @@ describe('multipart/form-data', () => {
             }
         };
         const response = await httpClient.sendRequest<any>(request);
-        const responseBody = response.data; 
+        const responseBody = response.data;
 
         //responseBody:{"args":{},"data":"","files":{"myfile":"Hello World!"},"form":{},"headers":{"Accept":"application/json","Content-Type":"multipart/form-data; boundary=--------------------------210235725180725504875196","Host":"httpbin.org","Transfer-Encoding":"chunked","User-Agent":"axios/0.21.4","X-Amzn-Trace-Id":"Root=1-63fc8b53-05d7938c3caa98be4aba5ca9"},"json":null,"origin":"34.94.218.73","url":"https://httpbin.org/post"}
 

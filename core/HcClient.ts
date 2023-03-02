@@ -29,6 +29,7 @@ import { getLogger, Logger, LogLevel } from './logger';
 import { DefaultHttpResponse } from "./http/DefaultHttpResponse";
 import { Region } from "./region/region";
 import { SdkStreamResponse } from "./SdkStreamResponse";
+import { ClientOptions, DefaultHttpClient } from "./http/DefaultHttpClient";
 
 export interface HttpRequestOptions {
     method: string;
@@ -43,25 +44,33 @@ export interface HttpRequestOptions {
 export class HcClient {
     private httpClient: HttpClient;
     private credential?: ICredential;
-    private proxyAgent: string = '';
+    private proxyAgent = '';
     private static loggerName = 'HcClient';
     private logger: Logger;
     private region?: Region;
+    private clientOptions?: ClientOptions;
+    private endpoints?: string[];
 
-    constructor(client: HttpClient) {
+    constructor(client: HttpClient, clientOptions?: ClientOptions) {
         this.httpClient = client;
 
         // Logging
         this.logger = getLogger(HcClient.loggerName, LogLevel.INFO);
         this.logger.debug('initialized');
+
+        this.clientOptions = clientOptions;
     }
 
-    public withCredential(credential: ICredential): HcClient {
+    public withEndpoints(endpoints?: string[]) { 
+        this.endpoints = endpoints;
+        return this;
+    }
+    public withCredential(credential?: ICredential): HcClient {
         this.credential = credential;
         return this;
     }
 
-    public withRegion(region: Region): HcClient {
+    public withRegion(region?: Region): HcClient {
         this.region = region;
         return this;
     }
@@ -69,6 +78,11 @@ export class HcClient {
     public withHttpsAgent(proxyAgent: string): HcClient {
         this.proxyAgent = proxyAgent;
         return this;
+    }
+
+    public overrideEndpoints(endpoint?: string[]): HcClient {
+        const client = new DefaultHttpClient(this.clientOptions, endpoint);
+        return new HcClient(client, this.clientOptions).withCredential(this.credential).withEndpoints(endpoint);
     }
 
     public async sendRequest<T extends SdkResponse>(options: HttpRequestOptions): Promise<T> {
@@ -113,6 +127,7 @@ export class HcClient {
 
         const builder = new HttpRequestBuilder();
         let httpRequest = builder
+            .withEndpoint(this.endpoints![0])
             .withUrl(url)
             .withHeaders(options.headers)
             .withMethod(options.method)
@@ -135,7 +150,7 @@ export class HcClient {
 
     private extractResponse<T extends SdkResponse>(result: DefaultHttpResponse<T>): T {
         const headers = result.headers;
-        let contentType = headers['content-type']?.toLowerCase();
+        const contentType = headers['content-type']?.toLowerCase();
         if (/(application\/octet-stream|image|application\/zip)/.test(contentType)) {
             const streamRes = new SdkStreamResponse();
             streamRes.body = result.data;

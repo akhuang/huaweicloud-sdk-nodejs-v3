@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Huawei Technologies Co.,Ltd.
+ * Copyright 2023 Huawei Technologies Co.,Ltd.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -34,13 +34,11 @@ import { Constants } from "../../utils/constant";
 export class IamService {
     private client: HcClient;
     constructor(hclient: HcClient, iamEndpoint?: string) {
-        this.client = cloneDeep(hclient);
-        this.client.withEndpoint(iamEndpoint ?? Constants.DEFAULT_IAM_ENDPOINT);
-        this.client.withRegion(undefined);
+        this.client = hclient.overrideEndpoints(iamEndpoint ? [iamEndpoint] : [Constants.DEFAULT_IAM_ENDPOINT]);
     }
 
     async getProjecId(regionId: string): Promise<string> {
-        let request = new KeystoneListProjectsRequest();
+        const request = new KeystoneListProjectsRequest();
         request.name = regionId;
 
         return this.keystoneListProjects(request).then(projectRes => {
@@ -51,7 +49,6 @@ export class IamService {
             }
 
         }).catch(error => {
-            console.log(error);
             throw new SdkException(error);
         });
     }
@@ -221,7 +218,7 @@ export class IamService {
         };
         const localVarHeaderParameter = {} as any;
 
-        var body: any;
+        let body: any;
 
         if (keystoneCreateProjectRequest !== null && keystoneCreateProjectRequest !== undefined) {
             if (keystoneCreateProjectRequest instanceof KeystoneCreateProjectRequest) {

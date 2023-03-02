@@ -21,9 +21,8 @@
 
 import { ICredential, isJsonContentType } from "./ICredential";
 import { IHttpRequest } from "../http/IHttpRequest";
-import { AKSKSigner } from "./AKSKSigner";
+import { AKSKSigner, RequiredError } from "./AKSKSigner";
 import { HttpRequestBuilder } from "../http/IHttpRequestBuilder";
-import { RequiredError } from "./AKSKSigner";
 import { HcClient } from "../HcClient";
 import { IamService } from "../internal/services/iam.service";
 import { AuthCache } from "../internal/services/authcache";
@@ -106,10 +105,13 @@ export class GlobalCredentials implements ICredential {
             .addPathParams(this.getPathParams());
 
         // 替换所有的path参数
+        let url = httpRequest.url;
         if (this.domainId) {
-            builder.withUrl(parsePath(httpRequest.url, this.getPathParams()))
+            url = parsePath(url, this.getPathParams());
+            builder.withUrl(url)
                 .addHeaders("X-Domain-Id", this.domainId);
         }
+        builder.withEndpoint(`${httpRequest.endpoint}${url}`);
 
         if (this.securityToken) {
             builder.addHeaders("X-Security-Token", this.securityToken);
@@ -121,6 +123,7 @@ export class GlobalCredentials implements ICredential {
 
         builder.addAllHeaders(httpRequest.headers);
         Object.assign(httpRequest, builder.build());
+        
         const headers = AKSKSigner.sign(httpRequest, this);
 
         builder.addAllHeaders(headers);
@@ -150,13 +153,13 @@ export class GlobalCredentials implements ICredential {
 
 function parsePath(path: string | undefined, params: Record<string, any>): string {
     if (!path || !params) {
-      return path || "";
+        return path || "";
     }
-  
+
     const replacePathParam = (parsedPath: string, [param, value]: [string, any]): string => {
-      const encodedValue = encodeURIComponent(value);
-      return parsedPath.replace(new RegExp(`{${param}}`, "g"), encodedValue);
+        const encodedValue = encodeURIComponent(value);
+        return parsedPath.replace(new RegExp(`{${param}}`, "g"), encodedValue);
     };
-  
+
     return Object.entries(params).reduce(replacePathParam, path);
-  }
+}

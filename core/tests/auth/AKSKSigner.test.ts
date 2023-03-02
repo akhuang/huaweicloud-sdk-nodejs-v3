@@ -36,16 +36,16 @@ describe('aksksinger test', () => {
             const expectedOutput = "authorization:Bearer token\ncontent-type:application/json\nx-custom-header:custom value\n";
             expect(AKSKSigner['buildCanonicalHeaders'](headers)).toBe(expectedOutput);
         });
-        
+
         test('should return headers be unencoded', () => {
             const headers = {
-              'X-Test-Header1': 'value1',
-              'X-Test-Header2': 'value2',
-              'X-Test-Header3': 'value3 with space'
+                'X-Test-Header1': 'value1',
+                'X-Test-Header2': 'value2',
+                'X-Test-Header3': 'value3 with space'
             };
             const expectedOutput = 'x-test-header1:value1\nx-test-header2:value2\nx-test-header3:value3 with space\n';
             expect(AKSKSigner['buildCanonicalHeaders'](headers)).toBe(expectedOutput);
-          });
+        });
     });
 
     describe('CanonicalQueryString', () => {
@@ -69,12 +69,12 @@ describe('aksksinger test', () => {
 
         test('should return encoded query string', () => {
             const queryParams = {
-              'test1': 'value1',
-              'test2': 'value2 with space',
-              'test3': '特殊字符#&'
+                'test1': 'value1',
+                'test2': 'value2 with space',
+                'test3': '特殊字符#&'
             };
             const expectedOutput = 'test1=value1&test2=value2%20with%20space&test3=%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%23%26';
             expect(AKSKSigner['CanonicalQueryString']({ queryParams })).toBe(expectedOutput);
-          });
+        });
     });
 });

@@ -163,7 +163,7 @@ export class DefaultHttpClient implements HttpClient {
 
         addUserAgentHeader(headers, this._defaultOptions.headers?.['User-Agent']);
 
-        let requestParams: AxiosRequestConfig = {
+        const requestParams: AxiosRequestConfig = {
             url,
             method: method as Method,
             headers,
@@ -194,8 +194,8 @@ export class DefaultHttpClient implements HttpClient {
     ): DefaultHttpResponse<T> {
         if (httpRequest['responseHeaders'] && axiosResponse.data) {
             const responseHeaders = httpRequest['responseHeaders'];
-            for (let item of responseHeaders) {
-                let lowerItem = item.toString().toLowerCase();
+            for (const item of responseHeaders) {
+                const lowerItem = item.toString().toLowerCase();
                 if (!axiosResponse.data[item] && axiosResponse.headers[lowerItem]) {
                     axiosResponse.data[item] = axiosResponse.headers[lowerItem];
                 }
@@ -209,7 +209,7 @@ export class DefaultHttpClient implements HttpClient {
     }
 
     private _formatExceptionResponse(error: AxiosError): ExceptionResponse {
-        let transformedResponse: ExceptionResponse = {
+        const transformedResponse: ExceptionResponse = {
             data: error.response ? error.response.data : undefined,
             status: error.response ? error.response.status : undefined,
             headers: error.response ? error.response.headers : undefined,

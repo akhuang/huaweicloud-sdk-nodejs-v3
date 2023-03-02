@@ -21,9 +21,8 @@
 
 import { ICredential, isJsonContentType } from "./ICredential";
 import { IHttpRequest } from "../http/IHttpRequest";
-import { AKSKSigner } from "./AKSKSigner";
+import { AKSKSigner, RequiredError } from "./AKSKSigner";
 import { HttpRequestBuilder } from "../http/IHttpRequestBuilder";
-import { RequiredError } from "./AKSKSigner";
 import { HcClient } from "../HcClient";
 import { IamService } from "../internal/services/iam.service";
 import { AuthCache } from "../internal/services/authcache";
@@ -99,11 +98,14 @@ export class BasicCredentials implements ICredential {
         const builder = new HttpRequestBuilder();
         builder.addPathParams(this.getPathParams());
 
+
         // 替换所有的path参数
+        let url = httpRequest.url;
         if (this.projectId) {
-            let url = this.parsePath(httpRequest.url, this.getPathParams());
+            url = this.parsePath(url, this.getPathParams());
             builder.withUrl(url);
         }
+        builder.withEndpoint(`${httpRequest.endpoint}${url}`);
 
         if (this.projectId) {
             builder.addHeaders("X-Project-Id", this.projectId);
@@ -119,6 +121,7 @@ export class BasicCredentials implements ICredential {
 
         builder.addAllHeaders(httpRequest.headers);
         Object.assign(httpRequest, builder.build());
+
         const headers = AKSKSigner.sign(httpRequest, this);
 
         builder.addAllHeaders(headers);

@@ -1,0 +1,37 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+    },
+    "plugins": ["@typescript-eslint", "import", "node", "promise", "standard"],
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:node/recommended",
+      "plugin:promise/recommended"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "node/no-missing-import": "off",
+      "node/no-unsupported-features/es-syntax": "off",
+      "node/shebang": "off",
+      "import/prefer-default-export": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".ts"]
+        }
+      }
+    }
+  }

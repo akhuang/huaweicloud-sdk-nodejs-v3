@@ -39,8 +39,7 @@ export class RegionService {
             data: {}
         };
         const localVarHeaderParameter = {} as any;
-        options.headers = localVarHeaderParameter;
-        options['responseHeaders'] = [''];
+        options.headers = localVarHeaderParameter; 
         return this.client.sendRequest(options);
     }
 }

@@ -27,7 +27,7 @@ import { GlobalCredentials } from "./auth/GlobalCredentials";
 import { SdkException } from "./exception/SdkException";
 import { Region } from "./region/region";
 import { UserOptions } from "./UserOptions";
-const path = require('path');
+import path from 'path';
 
 interface CredParams {
     ak?: string;
@@ -35,6 +35,7 @@ interface CredParams {
     project_id?: string,
     domain_id?: string,
 }
+
 export class ClientBuilder<T> {
     private init: Function;
     private endpoints?: string[];
@@ -107,12 +108,15 @@ export class ClientBuilder<T> {
             throw new SdkException(`credential can not be null, ${this.credentialType}Credential objects are required`);
         }
 
+        if (this.region) {
+            this.endpoints = this.region.endpoints;
+        }
         const client = new DefaultHttpClient(axiosOptions, this.endpoints);
         const hcClient = new HcClient(client);
 
         this.region && hcClient.withRegion(this.region);
 
-        hcClient.withCredential(this.credential);
+        hcClient.withCredential(this.credential).withEndpoints(this.endpoints);
         return this.init(hcClient);
     }
 
@@ -156,7 +160,7 @@ export class ClientBuilder<T> {
     private getInputParamCredential(CredentialsType: any, credential: CredParams) {
         const hash = Object.entries(credential)
             .filter(([key]) => key.startsWith("HUAWEICLOUD_SDK_"))
-            .reduce((acc, [key, value]) => {
+            .reduce((acc: { [key: string]: string }, [key, value]) => {
                 const formattedKey = key
                     .substring(16)
                     .split("_")
