@@ -66,7 +66,7 @@ describe('DefaultHttpClient', () => {
             url: '/api/data',
             headers: {},
         };
-
+        httpService.httpRequest = options;
         const response = await httpService.sendRequest(options);
 
         expect(response.statusCode).toEqual(200);
@@ -130,6 +130,7 @@ describe('DefaultHttpClient', () => {
             url: '/status/111',
             headers: {},
         };
+        httpService.httpRequest = options;
 
         // await httpService.sendRequest(options);
         await expect(httpService.sendRequest(options)).rejects.toThrow();

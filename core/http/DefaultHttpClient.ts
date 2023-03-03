@@ -262,6 +262,9 @@ export interface ClientOptions {
     axiosRequestConfig?: AxiosRequestConfig
 }
 function reSigner(config: AxiosRequestConfig, credential?: ICredential, httpRequest?: IHttpRequest) {
+    if (!credential || !httpRequest) {
+        return;
+    }
     httpRequest!.endpoint = `${config.baseURL}${config.url}`;
     httpRequest!.headers = {
         ...httpRequest!.headers,
