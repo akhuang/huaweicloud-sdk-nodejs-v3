@@ -41,16 +41,12 @@ export class IamService {
         const request = new KeystoneListProjectsRequest();
         request.name = regionId;
 
-        return this.keystoneListProjects(request).then(projectRes => {
-            if (projectRes.projects && projectRes.projects.length == 1) {
-                return projectRes.projects[0].id;
-            } else {
-                return this.getCreateProjectId(regionId);
-            }
-
-        }).catch(error => {
-            throw new SdkException(error);
-        });
+        const projectRes = await this.keystoneListProjects(request);
+        if (projectRes.projects && projectRes.projects.length == 1) {
+            return projectRes.projects[0].id;
+        } else {
+            return this.getCreateProjectId(regionId);
+        }
     }
 
     async getDomainId(): Promise<string> {
@@ -123,7 +119,7 @@ export class IamService {
 
     }
 
-    protected keystoneListRegions(): Promise<KeystoneListRegionsResponse> {
+    protected async keystoneListRegions(): Promise<KeystoneListRegionsResponse> {
         const options = {
             method: "GET",
             url: "/v3/regions",
@@ -135,10 +131,10 @@ export class IamService {
         };
         const localVarHeaderParameter = {} as any;
         options.headers = localVarHeaderParameter;
-        return this.client.sendRequest(options);
+        return await this.client.sendRequest(options);
     }
 
-    private keystoneListProjects(keystoneListProjectsRequest?: KeystoneListProjectsRequest): Promise<KeystoneListProjectsResponse> {
+    async keystoneListProjects(keystoneListProjectsRequest?: KeystoneListProjectsRequest): Promise<KeystoneListProjectsResponse> {
         const options = {
             method: "GET",
             url: "/v3/projects",
@@ -203,10 +199,10 @@ export class IamService {
         options.queryParams = localVarQueryParameter;
         options.headers = localVarHeaderParameter;
 
-        return this.client.sendRequest(options);
+        return await this.client.sendRequest(options);
     }
 
-    private keystoneCreateProject(keystoneCreateProjectRequest?: KeystoneCreateProjectRequest): Promise<KeystoneCreateProjectResponse> {
+    private async keystoneCreateProject(keystoneCreateProjectRequest?: KeystoneCreateProjectRequest): Promise<KeystoneCreateProjectResponse> {
         const options = {
             method: "POST",
             url: "/v3/projects",
@@ -230,10 +226,10 @@ export class IamService {
 
         options.data = body !== undefined ? body : {};
         options.headers = localVarHeaderParameter;
-        return this.client.sendRequest(options);
+        return await this.client.sendRequest(options);
     }
 
-    private keystoneListAuthDomains(): Promise<KeystoneListAuthDomainsResponse> {
+    private async keystoneListAuthDomains(): Promise<KeystoneListAuthDomainsResponse> {
         const options = {
             method: "GET",
             url: "/v3/auth/domains",
@@ -244,6 +240,6 @@ export class IamService {
             data: {}
         };
         options.headers = {};
-        return this.client.sendRequest(options);
+        return await this.client.sendRequest(options);
     }
 }

@@ -87,17 +87,15 @@ export class BasicCredentials implements ICredential {
     }
 
     public processAuthRequest(httpRequest: IHttpRequest): IHttpRequest {
-
         if (!this.ak) {
             throw new RequiredError('AK cannot be empty or undefined.');
         }
         if (!this.sk) {
             throw new RequiredError('SK cannot be empty or undefined.');
-        }
-
+        } 
+        
         const builder = new HttpRequestBuilder();
         builder.addPathParams(this.getPathParams());
-
 
         // 替换所有的path参数
         let url = httpRequest.url;
@@ -142,7 +140,10 @@ export class BasicCredentials implements ICredential {
             return this;
         }
 
-        const projectId = await new IamService(hcClient, this.iamEndpoint).getProjecId(region);
+        const projectId = 
+        
+        
+        await new IamService(hcClient, this.iamEndpoint).getProjecId(region);
         authCacheInstance.putCache(akWithName, projectId);
         this.projectId = projectId;
         return this;

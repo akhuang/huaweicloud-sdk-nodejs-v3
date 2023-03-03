@@ -30,9 +30,15 @@ import { ExceptionResponse } from '../exception/ExceptionResponse';
 import { SdkResponse } from '../SdkResponse';
 import { ExceptionUtil } from '../exception/ExceptionUtil';
 import { SdkException } from '../exception/SdkException';
+import { AKSKSigner } from '../auth/AKSKSigner';
+import { HttpRequestOptions } from '../HcClient';
+import { ICredential } from '../auth/ICredential';
 
 export class DefaultHttpClient implements HttpClient {
     private endpoints: string[];
+
+    credentials?: ICredential;
+    httpRequest?: IHttpRequest;
     private _axiosInstance: AxiosInstance;
     private _logger: Logger;
     private _defaultOptions: ClientOptions;
@@ -63,7 +69,7 @@ export class DefaultHttpClient implements HttpClient {
             const axiosResponse = await this._sendHttpRequest(httpRequest);
             const httpResponse = this._formatHttpResponse<T>(httpRequest, axiosResponse);
             return httpResponse;
-        } catch (error: any) { 
+        } catch (error: any) {
             const exceptionResponse = this._formatExceptionResponse(error);
             this._logger.error('Some error found:', exceptionResponse);
             throw ExceptionUtil.generalException(exceptionResponse);
@@ -114,7 +120,8 @@ export class DefaultHttpClient implements HttpClient {
                 // Check whether the error code is 'ECONNABORTED' or 'ECONNREFUSED'
                 if (error.code === 'ECONNABORTED' ||
                     error.code === 'ECONNREFUSED' ||
-                    error.code == 'ECONNRESET') {
+                    error.code === 'ECONNRESET' ||
+                    (error.response && error.response.status === 504)) {
                     if (this.retryCount >= this.maxRetryCount) {
                         return Promise.reject(error);
                     }
@@ -129,11 +136,14 @@ export class DefaultHttpClient implements HttpClient {
                     const backupUrl = this.endpoints[1];
                     // Set the baseURL of the request to the backup URL
                     error.config.baseURL = backupUrl;
+                    error.config.headers['host'] = error.config.baseURL.replace(/^https?:\/\/(.*?)\/?$/, '$1');
+                    reSigner(error.config, this.credentials, this.httpRequest);
                     try {
                         // Send the request again
                         const response = await axiosInstance.request(error.config);
                         // If the request succeeds, reverse the order of the 'endpoints' array
                         this.endpoints = this.endpoints.reverse();
+
                         return response;
                     } catch (err) {
                         // If the request fails, reject the entire request
@@ -179,12 +189,15 @@ export class DefaultHttpClient implements HttpClient {
         }
 
         if (headers['content-type'] === 'multipart/form-data') {
-            requestParams.headers = data.getHeaders();
+            // requestParams.headers = data.getHeaders();
+            const { ['content-type']: contentType } = data.getHeaders();
+            requestParams.headers = { ...requestParams.headers, 'content-type': contentType };
         }
 
         // set axios config baseURL
         const primaryUrl = this.endpoints![0];
         requestParams.baseURL = primaryUrl;
+
         return this._axiosInstance(requestParams);
     }
 
@@ -248,3 +261,20 @@ export interface ClientOptions {
     logLevel?: LogLevel;
     axiosRequestConfig?: AxiosRequestConfig
 }
+function reSigner(config: AxiosRequestConfig, credential?: ICredential, httpRequest?: IHttpRequest) {
+    httpRequest!.endpoint = `${config.baseURL}${config.url}`;
+    httpRequest!.headers = {
+        ...httpRequest!.headers,
+        ...(config.headers && {
+            'content-type': config.headers['Content-Type'],
+            'X-Project-Id': config.headers['X-Project-Id']
+        }),
+    };
+
+    delete httpRequest!.headers['Authorization'];
+    delete httpRequest!.headers['user-agent'];
+    httpRequest!.headers['host'] = config.baseURL!.replace(/^https?:\/\/(.*?)\/?$/, '$1');
+    const headers = AKSKSigner.sign(httpRequest!, credential!);
+    config.headers = headers;
+}
+

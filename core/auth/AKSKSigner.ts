@@ -94,7 +94,7 @@ export class AKSKSigner {
         const payloadHash = this.buildPayloadHash(request);
 
         const canonicalRequest = this.buildCanonicalRequest(request.method, canonicalURI, canonicalQueryString, canonicalHeaders, signedHeaderNames, payloadHash);
-
+ 
         const canonicalRequestHash = this.Hex(canonicalRequest);
         const stringToSign = this.getStringToSign(this.SDK_SIGNING_ALGORITHM, dateTimeStamp, canonicalRequestHash);
         const signatureString = this.hmacSHA256(credential.getSk(), stringToSign);

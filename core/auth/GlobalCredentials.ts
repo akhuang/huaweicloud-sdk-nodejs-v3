@@ -123,7 +123,6 @@ export class GlobalCredentials implements ICredential {
 
         builder.addAllHeaders(httpRequest.headers);
         Object.assign(httpRequest, builder.build());
-        
         const headers = AKSKSigner.sign(httpRequest, this);
 
         builder.addAllHeaders(headers);

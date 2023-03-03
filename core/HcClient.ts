@@ -61,7 +61,7 @@ export class HcClient {
         this.clientOptions = clientOptions;
     }
 
-    public withEndpoints(endpoints?: string[]) { 
+    public withEndpoints(endpoints?: string[]) {
         this.endpoints = endpoints;
         return this;
     }
@@ -87,8 +87,10 @@ export class HcClient {
 
     public async sendRequest<T extends SdkResponse>(options: HttpRequestOptions): Promise<T> {
         this.logger.debug('send request');
-
+        this.httpClient.credentials = this.credential;
         const request = await this.buildRequest(options);
+
+        this.httpClient.httpRequest = request;
 
         try {
             const response = await this.httpClient.sendRequest<T>(request);
@@ -108,7 +110,8 @@ export class HcClient {
             url = url.replace(`{${key}}`, value + '');
         });
 
-        if (options.method === 'DELETE' && options.data === undefined) {
+        if (options.method === 'DELETE'
+            && (options.data && (Object.keys(options.data).length <= 0 || options.data.length <= 0))) {
             delete options.data;
         }
 
