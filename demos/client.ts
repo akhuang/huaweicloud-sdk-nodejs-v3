@@ -1,6 +1,9 @@
 import { ListVpcsRequest, VpcClient, VpcRegion } from "./vpc/huaweicloud-sdk-vpc";
 import { BasicCredentials } from "../core/auth/BasicCredentials";
-import * as dotenv from 'dotenv'; 
+import * as dotenv from 'dotenv';
+import { ShowQuotaRequest } from "@huaweicloud/huaweicloud-sdk-vpc";
+import { CdnClient, CdnRegion } from "./cdn/huaweicloud-sdk-cdn";
+import { GlobalCredentials } from "../core/auth/GlobalCredentials";
 dotenv.config();
 
 const ak = process.env.AK;
@@ -14,10 +17,12 @@ let credentials = new BasicCredentials()
 (async () => {
     await fetchDataUsingRegion();
     await fetchDataUsingMultiEndpoints();
-    await fetchDataWithRetry();
+    await fetchDataWithRetryForBasicCredentials();
+    await fetchDataWithRetryForGlobalCredentials();
+    await fetchDataWithRetryRegion();
 })();
 
-async function fetchDataWithRetry() {
+async function fetchDataWithRetryForBasicCredentials() {
     try {
         credentials = credentials.withProjectId(projectId);
         const client = VpcClient.newBuilder()
@@ -31,6 +36,40 @@ async function fetchDataWithRetry() {
         const request1 = new ListVpcsRequest();
         const result2 = await client.listVpcs(request1);
         console.log("Result2:", JSON.stringify(result2, null, 2));
+    } catch (error: any) {
+        console.error("Exception:", JSON.stringify(error, null, 2));
+    }
+}
+
+async function fetchDataWithRetryForGlobalCredentials() {
+    try {
+        let globalCredentials = new GlobalCredentials()
+            .withAk(ak)
+            .withSk(sk);
+
+        const client = CdnClient.newBuilder()
+            .withCredential(globalCredentials)
+            .withEndpoint(["http://localhost:3000", "https://cdn.myhuaweicloud.com"])
+            .build(); 
+        const result = await client.showQuota();
+        console.log("Result:", JSON.stringify(result, null, 2)); 
+    } catch (error: any) {
+        console.error("Exception:", JSON.stringify(error, null, 2));
+    }
+}
+
+async function fetchDataWithRetryRegion() {
+    try {
+        let globalCredentials = new GlobalCredentials()
+            .withAk(ak)
+            .withSk(sk);
+
+        const client = CdnClient.newBuilder()
+            .withCredential(globalCredentials)
+            .withRegion(CdnRegion.CN_NORTH_1)
+            .build(); 
+        const result = await client.showQuota();
+        console.log("Result:", JSON.stringify(result, null, 2)); 
     } catch (error: any) {
         console.error("Exception:", JSON.stringify(error, null, 2));
     }

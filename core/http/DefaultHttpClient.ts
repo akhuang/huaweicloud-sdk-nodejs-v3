@@ -31,7 +31,6 @@ import { SdkResponse } from '../SdkResponse';
 import { ExceptionUtil } from '../exception/ExceptionUtil';
 import { SdkException } from '../exception/SdkException';
 import { AKSKSigner } from '../auth/AKSKSigner';
-import { HttpRequestOptions } from '../HcClient';
 import { ICredential } from '../auth/ICredential';
 
 export class DefaultHttpClient implements HttpClient {
@@ -195,7 +194,7 @@ export class DefaultHttpClient implements HttpClient {
         }
 
         // set axios config baseURL
-        const primaryUrl = this.endpoints![0];
+        const primaryUrl = this.endpoints[0];
         requestParams.baseURL = primaryUrl;
 
         return this._axiosInstance(requestParams);
@@ -261,23 +260,32 @@ export interface ClientOptions {
     logLevel?: LogLevel;
     axiosRequestConfig?: AxiosRequestConfig
 }
+
 function reSigner(config: AxiosRequestConfig, credential?: ICredential, httpRequest?: IHttpRequest) {
     if (!credential || !httpRequest) {
         return;
     }
-    httpRequest!.endpoint = `${config.baseURL}${config.url}`;
-    httpRequest!.headers = {
-        ...httpRequest!.headers,
+    httpRequest.endpoint = `${config.baseURL}${config.url}`;
+
+    const headerProperties = Object.entries(config.headers || {}).reduce((acc: { [key: string]: string }, [key, value]) => {
+        if (key === 'X-Project-Id' || key === 'X-Domain-Id') {
+            acc[key] = value as string;
+        }
+        return acc;
+    }, {});
+
+    httpRequest.headers = {
+        ...httpRequest.headers,
+        ...headerProperties,
         ...(config.headers && {
-            'content-type': config.headers['Content-Type'],
-            'X-Project-Id': config.headers['X-Project-Id']
+            'content-type': config.headers['Content-Type']
         }),
     };
 
-    delete httpRequest!.headers['Authorization'];
-    delete httpRequest!.headers['user-agent'];
-    httpRequest!.headers['host'] = config.baseURL!.replace(/^https?:\/\/(.*?)\/?$/, '$1');
-    const headers = AKSKSigner.sign(httpRequest!, credential!);
+    delete httpRequest.headers['Authorization'];
+    delete httpRequest.headers['user-agent'];
+    httpRequest.headers['host'] = config.baseURL?.replace(/^https?:\/\/(.*?)\/?$/, '$1');
+    const headers = AKSKSigner.sign(httpRequest, credential);
     config.headers = headers;
 }
 
