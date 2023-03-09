@@ -1,4 +1,7 @@
 import { AKSKSigner } from '../../auth/AKSKSigner';
+
+import { escape } from "querystring";
+
 describe('aksksinger test', () => {
     describe('CanonicalURI', () => {
         test('should return encoded uri', () => {
@@ -16,6 +19,12 @@ describe('aksksinger test', () => {
         test('should return encoded uri with special characters encoded', () => {
             const inputUri = '/test1 test2/test3%test4?test5=foo#test6=bar';
             const expectedOutput = '/test1%20test2/test3%25test4%3Ftest5%3Dfoo%23test6%3Dbar/';
+            expect(AKSKSigner["CanonicalURI"](inputUri)).toBe(expectedOutput);
+        });
+
+        test('should return encoded uri with special characters encoded', () => {
+            const inputUri = '/v2/086cd4ee9e00268e2f76c00ea33b6cbe/fgs/functions/urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:testph123:!t123';
+            const expectedOutput = '/v2/086cd4ee9e00268e2f76c00ea33b6cbe/fgs/functions/urn%3Afss%3Acn-north-4%3A086cd4ee9e00268e2f76c00ea33b6cbe%3Afunction%3Adefault%3Atestph123%3A%21t123/';
             expect(AKSKSigner["CanonicalURI"](inputUri)).toBe(expectedOutput);
         });
     });

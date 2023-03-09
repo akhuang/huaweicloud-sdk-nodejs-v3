@@ -9,7 +9,7 @@
     "dev": " ts-node-dev ./example/index.ts",
     "prod": "tsc && node ./build/index.js",
     "test": "mocha -r ts-node/register core/tests/*.spec.ts",
-    "jest": "jest --testMatch **/tests/http/**/*.test.ts "
+    "jest": "jest"
   },
   "repository": {
     "type": "git",

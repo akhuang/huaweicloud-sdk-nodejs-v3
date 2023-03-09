@@ -66,7 +66,7 @@ export class AKSKSigner {
             dateTimeStamp = dateTimeStamp + "Z";
             Object.assign(authenticationHeaders, { "X-Sdk-Date": dateTimeStamp })
         }
-        // @ts-ignore
+   
         const parsedUrl = url.parse(request.endpoint, true);
 
         let host = parsedUrl.host;
@@ -115,7 +115,7 @@ export class AKSKSigner {
         const uri = [];
         for (let i = 0; i < uriList.length; i++) {
             const uriValue = uriList[i];
-            uri.push(encodeURIComponent(uriValue))
+            uri.push(this.urlEncode(uriValue))
         }
         let urlpath = uri.join('/');
         if (urlpath[urlpath.length - 1] !== '/') {
