@@ -206,12 +206,15 @@ const client = VpcClient.newBuilder()
 ### 4. 发送请求并查看响应 [:top:](#用户手册-top)
 
 ``` javascript
-const result = client.showJobDetail(new ShowJobDetailRequest("id"));
-result.then(result => {
-    res.send("JSON.stringify(result)::" + JSON.stringify(result))
-}).catch(ex => {
-    res.send("exception:" + JSON.stringify(ex))
-});
+(async () => {
+  try {
+    const request = new ListVpcsRequest();
+    const result = await client.listVpcs(request);
+    console.log("Result:", JSON.stringify(result, null, 2));
+  } catch (error:any) {
+    console.error("Exception:", JSON.stringify(error, null, 2));
+  }
+})();
 ```
 
 ### 5. 故障处理 [:top:](#用户手册-top)
