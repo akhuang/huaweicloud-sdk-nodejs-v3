@@ -1,6 +1,6 @@
 import { RetentionLog } from './RetentionLog';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRetentionHistoriesResponse extends SdkResponse {
     private 'retention_log'?: Array<RetentionLog> | undefined;

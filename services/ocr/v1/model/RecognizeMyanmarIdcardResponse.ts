@@ -1,6 +1,6 @@
 import { MyanmarIdcardResult } from './MyanmarIdcardResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeMyanmarIdcardResponse extends SdkResponse {
     public result?: MyanmarIdcardResult;

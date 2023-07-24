@@ -1,7 +1,7 @@
 import { FileLocation } from './FileLocation';
 import { OtaPackageInfo } from './OtaPackageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowOtaPackageResponse extends SdkResponse {
     private 'package_id'?: string | undefined;

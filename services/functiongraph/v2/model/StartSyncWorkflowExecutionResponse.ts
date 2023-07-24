@@ -1,6 +1,6 @@
 import { SyncExecutionNodeErrorDetail } from './SyncExecutionNodeErrorDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class StartSyncWorkflowExecutionResponse extends SdkResponse {
     private 'execution_id'?: string | undefined;

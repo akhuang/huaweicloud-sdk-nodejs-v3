@@ -1,6 +1,6 @@
 import { EnterpriseRouter } from './EnterpriseRouter';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateEnterpriseRouterResponse extends SdkResponse {
     public instance?: EnterpriseRouter;

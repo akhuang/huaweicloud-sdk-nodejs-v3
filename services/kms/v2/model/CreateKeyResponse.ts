@@ -1,6 +1,6 @@
 import { KeKInfo } from './KeKInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateKeyResponse extends SdkResponse {
     private 'key_info'?: KeKInfo | undefined;

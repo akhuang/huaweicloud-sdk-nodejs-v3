@@ -1,5 +1,5 @@
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class SetOnlineMigrationTaskResponse extends SdkResponse {
     public id?: string;

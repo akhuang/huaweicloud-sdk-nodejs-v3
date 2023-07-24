@@ -1,6 +1,6 @@
 import { InstanceRestoreInfo } from './InstanceRestoreInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRestoreRecordsResponse extends SdkResponse {
     private 'restore_record_response'?: Array<InstanceRestoreInfo> | undefined;

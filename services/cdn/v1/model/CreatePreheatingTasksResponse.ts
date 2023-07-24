@@ -1,5 +1,5 @@
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreatePreheatingTasksResponse extends SdkResponse {
     private 'preheating_task'?: string | undefined;

@@ -1,6 +1,6 @@
 import { Flag } from './Flag';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DeletePremiumHostResponse extends SdkResponse {
     public id?: string;

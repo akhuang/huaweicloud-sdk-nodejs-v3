@@ -1,6 +1,6 @@
 import { Urls } from './Urls';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowUrlTaskInfoResponse extends SdkResponse {
     public total?: number;

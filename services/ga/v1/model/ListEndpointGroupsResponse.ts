@@ -1,7 +1,7 @@
 import { EndpointGroupDetail } from './EndpointGroupDetail';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListEndpointGroupsResponse extends SdkResponse {
     private 'endpoint_groups'?: Array<EndpointGroupDetail> | undefined;

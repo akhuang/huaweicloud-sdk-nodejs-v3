@@ -2,7 +2,7 @@ import { Dependent } from './Dependent';
 import { TagInfo } from './TagInfo';
 import { TopicCategory } from './TopicCategory';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowTemplateV3Response extends SdkResponse {
     public id?: string;

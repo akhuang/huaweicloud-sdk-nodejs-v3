@@ -1,6 +1,6 @@
 import { BigkeysBody } from './BigkeysBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowBigkeyScanTaskDetailsResponse extends SdkResponse {
     public id?: string;

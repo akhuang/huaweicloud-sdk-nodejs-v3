@@ -1,6 +1,6 @@
 import { LoginProtectResult } from './LoginProtectResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowUserLoginProtectResponse extends SdkResponse {
     private 'login_protect'?: LoginProtectResult | undefined;

@@ -1,6 +1,6 @@
 import { FaceSetFace } from './FaceSetFace';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class AddFacesByBase64Response extends SdkResponse {
     private 'face_set_id'?: string | undefined;

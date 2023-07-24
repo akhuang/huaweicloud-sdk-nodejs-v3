@@ -1,6 +1,6 @@
 import { TagVo } from './TagVo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowResourceTagResponse extends SdkResponse {
     public tags?: Array<TagVo>;

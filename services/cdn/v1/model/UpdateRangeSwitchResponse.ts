@@ -1,6 +1,6 @@
 import { OriginRangeBody } from './OriginRangeBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateRangeSwitchResponse extends SdkResponse {
     private 'origin_range'?: OriginRangeBody | undefined;

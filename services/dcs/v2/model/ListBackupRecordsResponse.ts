@@ -1,6 +1,6 @@
 import { BackupRecordResponse } from './BackupRecordResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListBackupRecordsResponse extends SdkResponse {
     private 'total_num'?: number | undefined;

@@ -1,5 +1,5 @@
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DownloadSecretBlobResponse extends SdkResponse {
     private 'secret_blob'?: string | undefined;

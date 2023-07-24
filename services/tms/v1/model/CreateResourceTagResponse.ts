@@ -1,6 +1,6 @@
 import { TagCreateResponseItem } from './TagCreateResponseItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateResourceTagResponse extends SdkResponse {
     private 'failed_resources'?: Array<TagCreateResponseItem> | undefined;

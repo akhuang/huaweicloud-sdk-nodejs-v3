@@ -1,6 +1,6 @@
 import { IdCardResult } from './IdCardResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeIdCardResponse extends SdkResponse {
     public result?: IdCardResult;

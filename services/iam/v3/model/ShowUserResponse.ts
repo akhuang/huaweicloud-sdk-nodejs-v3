@@ -1,6 +1,6 @@
 import { ShowUserResult } from './ShowUserResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowUserResponse extends SdkResponse {
     public user?: ShowUserResult;

@@ -1,6 +1,6 @@
 import { RoutingRuleSubject } from './RoutingRuleSubject';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateRoutingRuleResponse extends SdkResponse {
     private 'rule_id'?: string | undefined;

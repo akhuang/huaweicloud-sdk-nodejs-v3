@@ -1,6 +1,6 @@
 import { EpsPermission } from './EpsPermission';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchAddEndpointServicePermissionsResponse extends SdkResponse {
     public permissions?: Array<EpsPermission>;

@@ -1,6 +1,6 @@
 import { CheckResultResultBody } from './CheckResultResultBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunCheckResultResponse extends SdkResponse {
     public result?: CheckResultResultBody;

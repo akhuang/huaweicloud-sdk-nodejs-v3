@@ -1,6 +1,6 @@
 import { SnapshotDetails } from './SnapshotDetails';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateSnapshotResponse extends SdkResponse {
     public snapshot?: SnapshotDetails;

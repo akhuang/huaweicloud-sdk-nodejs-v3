@@ -1,6 +1,6 @@
 import { WatermarkTemplate } from './WatermarkTemplate';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListWatermarkTemplateResponse extends SdkResponse {
     public templates?: Array<WatermarkTemplate>;

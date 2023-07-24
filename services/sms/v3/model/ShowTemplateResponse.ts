@@ -1,6 +1,6 @@
 import { TemplateResponseBody } from './TemplateResponseBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowTemplateResponse extends SdkResponse {
     public template?: TemplateResponseBody;

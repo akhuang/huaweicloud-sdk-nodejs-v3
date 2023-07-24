@@ -1,6 +1,6 @@
 import { EpDetail } from './EpDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowEnterpriseProjectResponse extends SdkResponse {
     private 'enterprise_project'?: EpDetail | undefined;

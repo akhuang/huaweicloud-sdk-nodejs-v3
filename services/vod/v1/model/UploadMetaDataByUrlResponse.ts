@@ -1,6 +1,6 @@
 import { UploadAsset } from './UploadAsset';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UploadMetaDataByUrlResponse extends SdkResponse {
     private 'upload_assets'?: Array<UploadAsset> | undefined;

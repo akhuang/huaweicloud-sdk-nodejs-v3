@@ -1,6 +1,6 @@
 import { TopUrl } from './TopUrl';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListTopStatisticsResponse extends SdkResponse {
     private 'top_urls'?: Array<TopUrl> | undefined;

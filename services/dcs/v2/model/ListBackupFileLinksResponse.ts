@@ -1,6 +1,6 @@
 import { LinksItem } from './LinksItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListBackupFileLinksResponse extends SdkResponse {
     private 'file_path'?: string | undefined;

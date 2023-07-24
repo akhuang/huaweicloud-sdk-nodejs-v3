@@ -1,6 +1,6 @@
 import { CommonPoolsWithBorderGroupDict } from './CommonPoolsWithBorderGroupDict';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListPublicBorderGroupsResponse extends SdkResponse {
     private 'public_border_groups'?: Array<CommonPoolsWithBorderGroupDict> | undefined;

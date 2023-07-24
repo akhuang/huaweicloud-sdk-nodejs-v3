@@ -1,6 +1,6 @@
 import { SingleBackgroundTask } from './SingleBackgroundTask';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListBackgroundTaskResponse extends SdkResponse {
     private 'task_count'?: string | undefined;

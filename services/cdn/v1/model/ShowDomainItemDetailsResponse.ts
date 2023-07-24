@@ -1,6 +1,6 @@
 import { DomainItemDetail } from './DomainItemDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowDomainItemDetailsResponse extends SdkResponse {
     private 'domain_item_details'?: DomainItemDetail | undefined;

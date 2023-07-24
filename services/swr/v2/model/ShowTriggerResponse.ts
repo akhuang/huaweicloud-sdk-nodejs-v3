@@ -1,6 +1,6 @@
 import { TriggerHistories } from './TriggerHistories';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowTriggerResponse extends SdkResponse {
     public action?: string;

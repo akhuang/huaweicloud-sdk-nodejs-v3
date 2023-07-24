@@ -4,7 +4,7 @@ import { FunctionAsyncConfig } from './FunctionAsyncConfig';
 import { MountConfig } from './MountConfig';
 import { StrategyConfig } from './StrategyConfig';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateFunctionVersionResponse extends SdkResponse {
     private 'func_urn'?: string | undefined;

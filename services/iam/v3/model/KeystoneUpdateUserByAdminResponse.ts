@@ -1,6 +1,6 @@
 import { KeystoneUpdateUserByAdminResult } from './KeystoneUpdateUserByAdminResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneUpdateUserByAdminResponse extends SdkResponse {
     public user?: KeystoneUpdateUserByAdminResult;

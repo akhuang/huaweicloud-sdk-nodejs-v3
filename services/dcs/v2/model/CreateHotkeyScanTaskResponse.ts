@@ -1,6 +1,6 @@
 import { HotkeysBody } from './HotkeysBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateHotkeyScanTaskResponse extends SdkResponse {
     public id?: string;

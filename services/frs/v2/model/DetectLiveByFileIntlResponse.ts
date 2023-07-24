@@ -1,7 +1,7 @@
 import { LiveDetectRespVideoresult } from './LiveDetectRespVideoresult';
 import { WarningList } from './WarningList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DetectLiveByFileIntlResponse extends SdkResponse {
     private 'video-result'?: LiveDetectRespVideoresult | undefined;

@@ -1,5 +1,5 @@
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class AddQueueResponse extends SdkResponse {
     private 'queue_id'?: string | undefined;

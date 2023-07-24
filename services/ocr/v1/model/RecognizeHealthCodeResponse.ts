@@ -1,6 +1,6 @@
 import { HealthCodeResult } from './HealthCodeResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeHealthCodeResponse extends SdkResponse {
     public result?: HealthCodeResult;

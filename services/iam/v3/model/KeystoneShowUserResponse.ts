@@ -1,6 +1,6 @@
 import { KeystoneShowUserResult } from './KeystoneShowUserResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneShowUserResponse extends SdkResponse {
     public user?: KeystoneShowUserResult;

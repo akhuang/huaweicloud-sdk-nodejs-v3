@@ -1,6 +1,6 @@
 import { ShowCredential } from './ShowCredential';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowPermanentAccessKeyResponse extends SdkResponse {
     public credential?: ShowCredential;

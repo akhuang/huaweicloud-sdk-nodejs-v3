@@ -1,5 +1,5 @@
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchDeletePublicIpResponse extends SdkResponse {
     private 'job_ids'?: Array<string> | undefined;

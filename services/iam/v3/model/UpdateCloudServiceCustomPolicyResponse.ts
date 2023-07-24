@@ -1,6 +1,6 @@
 import { ServicePolicyRoleResult } from './ServicePolicyRoleResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateCloudServiceCustomPolicyResponse extends SdkResponse {
     public role?: ServicePolicyRoleResult;

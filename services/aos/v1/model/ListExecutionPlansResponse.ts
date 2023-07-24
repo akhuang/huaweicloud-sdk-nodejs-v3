@@ -1,6 +1,6 @@
 import { ExecutionPlan } from './ExecutionPlan';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListExecutionPlansResponse extends SdkResponse {
     private 'execution_plans'?: Array<ExecutionPlan> | undefined;

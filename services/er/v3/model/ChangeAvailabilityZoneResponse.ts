@@ -1,6 +1,6 @@
 import { EnterpriseRouter } from './EnterpriseRouter';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ChangeAvailabilityZoneResponse extends SdkResponse {
     public instance?: EnterpriseRouter;

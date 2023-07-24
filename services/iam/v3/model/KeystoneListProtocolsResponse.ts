@@ -1,7 +1,7 @@
 import { Links } from './Links';
 import { ProtocolResult } from './ProtocolResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneListProtocolsResponse extends SdkResponse {
     public links?: Links;

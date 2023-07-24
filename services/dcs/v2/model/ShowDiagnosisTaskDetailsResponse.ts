@@ -1,6 +1,6 @@
 import { DiagnosisNodeReport } from './DiagnosisNodeReport';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
     private 'abnormal_item_sum'?: number | undefined;

@@ -1,6 +1,6 @@
 import { DnsServersResponseDTO } from './DnsServersResponseDTO';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListDnsServersResponse extends SdkResponse {
     public data?: Array<DnsServersResponseDTO>;

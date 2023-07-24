@@ -1,6 +1,6 @@
 import { QueryRedisConfig } from './QueryRedisConfig';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListConfigurationsResponse extends SdkResponse {
     private 'config_time'?: string | undefined;

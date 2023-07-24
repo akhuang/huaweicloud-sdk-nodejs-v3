@@ -1,7 +1,7 @@
 import { Links } from './Links';
 import { ProjectResult } from './ProjectResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneListProjectsForUserResponse extends SdkResponse {
     public links?: Links;

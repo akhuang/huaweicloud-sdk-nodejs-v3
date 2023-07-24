@@ -1,7 +1,7 @@
 import { Catalog } from './Catalog';
 import { LinksSelf } from './LinksSelf';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneShowCatalogResponse extends SdkResponse {
     public catalog?: Array<Catalog>;

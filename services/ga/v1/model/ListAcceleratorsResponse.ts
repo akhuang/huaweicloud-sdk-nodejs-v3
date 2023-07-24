@@ -1,7 +1,7 @@
 import { AcceleratorDetail } from './AcceleratorDetail';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListAcceleratorsResponse extends SdkResponse {
     public accelerators?: Array<AcceleratorDetail>;

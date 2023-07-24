@@ -1,6 +1,6 @@
 import { VariableResponse } from './VariableResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ParseTemplateVariablesResponse extends SdkResponse {
     public variables?: Array<VariableResponse>;

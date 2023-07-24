@@ -1,7 +1,7 @@
 import { IvsStandardByNameAndIdResponseBodyResult } from './IvsStandardByNameAndIdResponseBodyResult';
 import { Meta } from './Meta';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DetectStandardByNameAndIdResponse extends SdkResponse {
     public meta?: Meta;

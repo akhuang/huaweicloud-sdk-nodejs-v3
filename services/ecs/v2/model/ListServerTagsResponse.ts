@@ -1,6 +1,6 @@
 import { ProjectTag } from './ProjectTag';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListServerTagsResponse extends SdkResponse {
     public tags?: Array<ProjectTag>;

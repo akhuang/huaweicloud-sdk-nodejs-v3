@@ -1,6 +1,6 @@
 import { FuncAsyncDestinationConfig } from './FuncAsyncDestinationConfig';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
     private 'func_urn'?: string | undefined;

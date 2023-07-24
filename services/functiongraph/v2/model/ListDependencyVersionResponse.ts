@@ -1,6 +1,6 @@
 import { ListDependenciesResult } from './ListDependenciesResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListDependencyVersionResponse extends SdkResponse {
     public dependencies?: Array<ListDependenciesResult>;

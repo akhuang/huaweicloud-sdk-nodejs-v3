@@ -1,6 +1,6 @@
 import { TransTemplateRsp } from './TransTemplateRsp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListTranscodeTemplateResponse extends SdkResponse {
     private 'template_group_list'?: Array<TransTemplateRsp> | undefined;

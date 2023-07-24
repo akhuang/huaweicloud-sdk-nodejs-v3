@@ -1,6 +1,6 @@
 import { ServiceSetDetailResponseDto } from './ServiceSetDetailResponseDto';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListServiceSetDetailsResponse extends SdkResponse {
     public data?: ServiceSetDetailResponseDto;

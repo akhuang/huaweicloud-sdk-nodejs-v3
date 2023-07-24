@@ -1,6 +1,6 @@
 import { RunModerationAudioResponseBodyResult } from './RunModerationAudioResponseBodyResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunModerationAudioResponse extends SdkResponse {
     public result?: RunModerationAudioResponseBodyResult;

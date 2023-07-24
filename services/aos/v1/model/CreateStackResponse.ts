@@ -1,6 +1,6 @@
 import { StackIdPrimitiveTypeHolder } from './StackIdPrimitiveTypeHolder';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateStackResponse extends SdkResponse {
     private 'stack_id'?: string | undefined;

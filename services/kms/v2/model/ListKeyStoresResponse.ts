@@ -1,6 +1,6 @@
 import { KeystoreDetails } from './KeystoreDetails';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListKeyStoresResponse extends SdkResponse {
     public total?: number;

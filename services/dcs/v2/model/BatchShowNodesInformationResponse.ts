@@ -1,6 +1,6 @@
 import { InstanceNodesInfoResp } from './InstanceNodesInfoResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchShowNodesInformationResponse extends SdkResponse {
     public count?: number;

@@ -1,6 +1,6 @@
 import { Secret } from './Secret';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DeleteSecretForScheduleResponse extends SdkResponse {
     public secret?: Secret;

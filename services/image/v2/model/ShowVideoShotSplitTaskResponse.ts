@@ -2,7 +2,7 @@ import { TaskCallback } from './TaskCallback';
 import { TaskOutput } from './TaskOutput';
 import { VideoSplitTaskInput } from './VideoSplitTaskInput';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowVideoShotSplitTaskResponse extends SdkResponse {
     private 'task_id'?: string | undefined;

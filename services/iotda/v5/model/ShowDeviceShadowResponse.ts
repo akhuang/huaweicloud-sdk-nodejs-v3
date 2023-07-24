@@ -1,6 +1,6 @@
 import { DeviceShadowData } from './DeviceShadowData';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowDeviceShadowResponse extends SdkResponse {
     private 'device_id'?: string | undefined;

@@ -1,6 +1,6 @@
 import { KeystoneGroupResultWithLinksSelf } from './KeystoneGroupResultWithLinksSelf';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneCreateGroupResponse extends SdkResponse {
     public group?: KeystoneGroupResultWithLinksSelf;

@@ -1,6 +1,6 @@
-import { HcClient } from "@huaweicloud/huaweicloud-sdk-core/HcClient";
-import { ClientBuilder } from "@huaweicloud/huaweicloud-sdk-core/ClientBuilder";
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { HcClient } from "@huaweicloudtest/huaweicloud-sdk-core/HcClient";
+import { ClientBuilder } from "@huaweicloudtest/huaweicloud-sdk-core/ClientBuilder";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 import { AddExtendCidrOption } from './model/AddExtendCidrOption';
 import { AddVpcExtendCidrRequest } from './model/AddVpcExtendCidrRequest';

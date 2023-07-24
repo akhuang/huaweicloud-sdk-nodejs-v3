@@ -1,6 +1,6 @@
 import { RuleHitCountRecords } from './RuleHitCountRecords';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRuleHitCountResponse extends SdkResponse {
     public data?: RuleHitCountRecords;

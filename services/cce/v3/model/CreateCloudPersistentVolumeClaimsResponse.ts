@@ -2,7 +2,7 @@ import { PersistentVolumeClaimMetadata } from './PersistentVolumeClaimMetadata';
 import { PersistentVolumeClaimSpec } from './PersistentVolumeClaimSpec';
 import { PersistentVolumeClaimStatus } from './PersistentVolumeClaimStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
     public apiVersion?: string;

@@ -1,6 +1,6 @@
 import { TemplateGroup } from './TemplateGroup';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListTemplateGroupResponse extends SdkResponse {
     private 'template_group_list'?: Array<TemplateGroup> | undefined;

@@ -1,7 +1,7 @@
 import { DimChild } from './DimChild';
 import { InstancesMonitoredObject } from './InstancesMonitoredObject';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListMonitoredObjectsResponse extends SdkResponse {
     public router?: Array<string>;

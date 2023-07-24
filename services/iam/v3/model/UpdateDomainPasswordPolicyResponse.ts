@@ -1,6 +1,6 @@
 import { PasswordPolicyResult } from './PasswordPolicyResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateDomainPasswordPolicyResponse extends SdkResponse {
     private 'password_policy'?: PasswordPolicyResult | undefined;

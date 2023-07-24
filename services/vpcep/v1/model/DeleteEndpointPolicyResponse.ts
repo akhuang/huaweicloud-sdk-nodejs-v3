@@ -2,7 +2,7 @@ import { PolicyStatement } from './PolicyStatement';
 import { QueryError } from './QueryError';
 import { TagList } from './TagList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DeleteEndpointPolicyResponse extends SdkResponse {
     public id?: string;

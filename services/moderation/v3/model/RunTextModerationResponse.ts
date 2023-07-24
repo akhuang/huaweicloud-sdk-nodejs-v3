@@ -1,6 +1,6 @@
 import { TextDetectionResult } from './TextDetectionResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunTextModerationResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

@@ -1,6 +1,6 @@
 import { ProjectV3 } from './ProjectV3';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListProjectsV4Response extends SdkResponse {
     public projects?: Array<ProjectV3>;

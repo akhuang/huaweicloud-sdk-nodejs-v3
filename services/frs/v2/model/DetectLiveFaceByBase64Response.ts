@@ -1,7 +1,7 @@
 import { LiveDetectFaceRespResult } from './LiveDetectFaceRespResult';
 import { WarningList } from './WarningList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DetectLiveFaceByBase64Response extends SdkResponse {
     public result?: LiveDetectFaceRespResult;

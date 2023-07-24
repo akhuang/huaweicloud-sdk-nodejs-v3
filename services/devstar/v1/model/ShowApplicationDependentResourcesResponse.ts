@@ -1,6 +1,6 @@
 import { ResouceInfo } from './ResouceInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowApplicationDependentResourcesResponse extends SdkResponse {
     private 'dependent_services'?: Array<ResouceInfo> | undefined;

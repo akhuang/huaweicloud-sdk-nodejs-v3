@@ -1,6 +1,6 @@
 import { NodeExecutionDetail } from './NodeExecutionDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowWorkflowExecutionResponse extends SdkResponse {
     private 'workflow_id'?: string | undefined;

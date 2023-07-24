@@ -1,6 +1,6 @@
 import { StackResource } from './StackResource';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListStackResourcesResponse extends SdkResponse {
     private 'stack_resources'?: Array<StackResource> | undefined;

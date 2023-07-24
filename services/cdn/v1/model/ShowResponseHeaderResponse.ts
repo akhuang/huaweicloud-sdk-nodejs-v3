@@ -1,6 +1,6 @@
 import { HeaderMap } from './HeaderMap';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowResponseHeaderResponse extends SdkResponse {
     public headers?: HeaderMap;

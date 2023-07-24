@@ -42,8 +42,8 @@ npm install @huaweicloud/huaweicloud-sdk-vpc
 
 ``` javascript
 // index.ts
-import { ListVpcsRequest, VpcClient } from "@huaweicloud/huaweicloud-sdk-vpc";
-import { BasicCredentials } from "@huaweicloud/huaweicloud-sdk-core/auth/BasicCredentials";
+import { ListVpcsRequest, VpcClient } from "@huaweicloudtest/huaweicloud-sdk-vpc";
+import { BasicCredentials } from "@huaweicloudtest/huaweicloud-sdk-core/auth/BasicCredentials";
 
 const ak = '{your ak string}';
 const sk = '{your sk string}';

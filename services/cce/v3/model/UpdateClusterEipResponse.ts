@@ -2,7 +2,7 @@ import { MasterEIPResponseSpec } from './MasterEIPResponseSpec';
 import { MasterEIPResponseStatus } from './MasterEIPResponseStatus';
 import { Metadata } from './Metadata';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateClusterEipResponse extends SdkResponse {
     public metadata?: Metadata;

@@ -1,6 +1,6 @@
 import { ListGroupsForEnterpriseProjectResDetail } from './ListGroupsForEnterpriseProjectResDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListGroupsForEnterpriseProjectResponse extends SdkResponse {
     public groups?: Array<ListGroupsForEnterpriseProjectResDetail>;

@@ -1,6 +1,6 @@
 import { EpDetail } from './EpDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListEnterpriseProjectResponse extends SdkResponse {
     private 'enterprise_projects'?: Array<EpDetail> | undefined;

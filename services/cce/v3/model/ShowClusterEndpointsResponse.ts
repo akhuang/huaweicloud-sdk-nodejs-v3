@@ -2,7 +2,7 @@ import { MasterEIPResponseStatus } from './MasterEIPResponseStatus';
 import { Metadata } from './Metadata';
 import { OpenAPIResponseSpec } from './OpenAPIResponseSpec';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowClusterEndpointsResponse extends SdkResponse {
     public metadata?: Metadata;

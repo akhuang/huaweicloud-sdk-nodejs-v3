@@ -1,7 +1,7 @@
 import { OtaPackageInfo } from './OtaPackageInfo';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListOtaPackageInfoResponse extends SdkResponse {
     public packages?: Array<OtaPackageInfo>;

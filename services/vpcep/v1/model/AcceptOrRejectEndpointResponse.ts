@@ -1,6 +1,6 @@
 import { ConnectionEndpoints } from './ConnectionEndpoints';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class AcceptOrRejectEndpointResponse extends SdkResponse {
     public connections?: Array<ConnectionEndpoints>;

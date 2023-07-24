@@ -1,6 +1,6 @@
 import { GetEastWestFirewallResponseBody } from './GetEastWestFirewallResponseBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListEastWestFirewallResponse extends SdkResponse {
     public data?: GetEastWestFirewallResponseBody;

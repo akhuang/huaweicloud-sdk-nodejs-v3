@@ -1,7 +1,7 @@
 import { Links } from './Links';
 import { PolicyRoleResult } from './PolicyRoleResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListCustomPoliciesResponse extends SdkResponse {
     public links?: Links;

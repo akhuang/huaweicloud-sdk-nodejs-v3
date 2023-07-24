@@ -1,6 +1,6 @@
 import { Whitelist } from './Whitelist';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowIpWhitelistResponse extends SdkResponse {
     private 'instance_id'?: string | undefined;

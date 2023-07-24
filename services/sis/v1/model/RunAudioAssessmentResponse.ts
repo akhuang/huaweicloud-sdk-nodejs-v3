@@ -2,7 +2,7 @@ import { Fluency } from './Fluency';
 import { Pronunciation } from './Pronunciation';
 import { Word } from './Word';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunAudioAssessmentResponse extends SdkResponse {
     public score?: number;

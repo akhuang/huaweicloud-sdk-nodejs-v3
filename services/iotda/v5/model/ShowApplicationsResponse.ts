@@ -1,6 +1,6 @@
 import { ApplicationDTO } from './ApplicationDTO';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowApplicationsResponse extends SdkResponse {
     public applications?: Array<ApplicationDTO>;

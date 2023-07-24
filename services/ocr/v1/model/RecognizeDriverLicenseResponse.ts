@@ -1,6 +1,6 @@
 import { DriverLicenseResult } from './DriverLicenseResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeDriverLicenseResponse extends SdkResponse {
     public result?: DriverLicenseResult;

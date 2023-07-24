@@ -1,6 +1,6 @@
 import { FinancialStatementResult } from './FinancialStatementResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeFinancialStatementResponse extends SdkResponse {
     public result?: FinancialStatementResult;

@@ -11,7 +11,7 @@ import { VarsStructure } from './VarsStructure';
 import { VarsStructurePrimitiveTypeHolder } from './VarsStructurePrimitiveTypeHolder';
 import { VarsUriContentPrimitiveTypeHolder } from './VarsUriContentPrimitiveTypeHolder';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class GetExecutionPlanMetadataResponse extends SdkResponse {
     private 'stack_id'?: string | undefined;

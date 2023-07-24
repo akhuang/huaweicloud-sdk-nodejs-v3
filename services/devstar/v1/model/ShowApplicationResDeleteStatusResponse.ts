@@ -1,6 +1,6 @@
 import { PipelineDeleteStatus } from './PipelineDeleteStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowApplicationResDeleteStatusResponse extends SdkResponse {
     private 'repo_status'?: ShowApplicationResDeleteStatusResponseRepoStatusEnum | undefined;

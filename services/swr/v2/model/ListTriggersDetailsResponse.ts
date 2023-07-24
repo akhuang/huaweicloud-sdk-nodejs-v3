@@ -1,6 +1,6 @@
 import { Trigger } from './Trigger';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListTriggersDetailsResponse extends SdkResponse {
     public body?: Array<Trigger>;

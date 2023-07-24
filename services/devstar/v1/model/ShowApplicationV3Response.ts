@@ -3,7 +3,7 @@ import { PipelineCreationResult } from './PipelineCreationResult';
 import { RepositoryCreationResult } from './RepositoryCreationResult';
 import { TemplateType } from './TemplateType';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowApplicationV3Response extends SdkResponse {
     public id?: string;

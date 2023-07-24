@@ -1,5 +1,5 @@
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
     private 'eip_id_list'?: Array<string> | undefined;

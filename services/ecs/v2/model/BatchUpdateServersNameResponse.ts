@@ -1,6 +1,6 @@
 import { ServerId } from './ServerId';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchUpdateServersNameResponse extends SdkResponse {
     public response?: Array<ServerId>;

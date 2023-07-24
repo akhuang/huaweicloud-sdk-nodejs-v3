@@ -1,6 +1,6 @@
 import { SearchFace } from './SearchFace';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class SearchFaceByUrlResponse extends SdkResponse {
     public faces?: Array<SearchFace>;

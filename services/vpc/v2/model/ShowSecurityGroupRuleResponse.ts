@@ -1,6 +1,6 @@
 import { SecurityGroupRule } from './SecurityGroupRule';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowSecurityGroupRuleResponse extends SdkResponse {
     private 'security_group_rule'?: SecurityGroupRule | undefined;

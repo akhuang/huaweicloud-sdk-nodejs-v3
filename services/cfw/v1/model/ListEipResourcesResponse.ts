@@ -1,6 +1,6 @@
 import { EipResponseData } from './EipResponseData';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListEipResourcesResponse extends SdkResponse {
     public data?: EipResponseData;

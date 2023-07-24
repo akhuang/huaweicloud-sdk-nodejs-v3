@@ -2,7 +2,7 @@ import { BackupFilesBody } from './BackupFilesBody';
 import { SourceInstanceBody } from './SourceInstanceBody';
 import { TargetInstanceBody } from './TargetInstanceBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowMigrationTaskResponse extends SdkResponse {
     private 'task_id'?: string | undefined;

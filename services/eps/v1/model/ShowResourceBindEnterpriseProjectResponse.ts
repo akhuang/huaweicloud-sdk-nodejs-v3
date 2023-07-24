@@ -1,7 +1,7 @@
 import { Errors } from './Errors';
 import { Resources } from './Resources';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
     public resources?: Array<Resources>;

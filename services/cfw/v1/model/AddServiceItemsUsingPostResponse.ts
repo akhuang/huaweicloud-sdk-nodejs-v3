@@ -1,6 +1,6 @@
 import { ServiceItemIds } from './ServiceItemIds';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class AddServiceItemsUsingPostResponse extends SdkResponse {
     public data?: ServiceItemIds;

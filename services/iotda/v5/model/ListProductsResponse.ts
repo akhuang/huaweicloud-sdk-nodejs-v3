@@ -1,7 +1,7 @@
 import { Page } from './Page';
 import { ProductSummary } from './ProductSummary';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListProductsResponse extends SdkResponse {
     public products?: Array<ProductSummary>;

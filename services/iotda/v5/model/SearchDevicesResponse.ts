@@ -1,6 +1,6 @@
 import { SearchDevice } from './SearchDevice';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class SearchDevicesResponse extends SdkResponse {
     public devices?: Array<SearchDevice>;

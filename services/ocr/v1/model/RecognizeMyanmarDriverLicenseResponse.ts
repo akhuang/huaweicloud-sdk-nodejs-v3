@@ -1,6 +1,6 @@
 import { MyanmarDriverLicenseResult } from './MyanmarDriverLicenseResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeMyanmarDriverLicenseResponse extends SdkResponse {
     public result?: MyanmarDriverLicenseResult;

@@ -1,4 +1,4 @@
-import { Region } from "@huaweicloud/huaweicloud-sdk-core/region/region";
+import { Region } from "@huaweicloudtest/huaweicloud-sdk-core/region/region";
 
 
 interface RegionMap {

@@ -1,7 +1,7 @@
 import { IvsExtentionByNameAndIdResponseBodyResult } from './IvsExtentionByNameAndIdResponseBodyResult';
 import { Meta } from './Meta';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DetectExtentionByNameAndIdResponse extends SdkResponse {
     public meta?: Meta;

@@ -1,7 +1,7 @@
 import { Domains } from './Domains';
 import { LinksSelf } from './LinksSelf';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneListAuthDomainsResponse extends SdkResponse {
     public domains?: Array<Domains>;

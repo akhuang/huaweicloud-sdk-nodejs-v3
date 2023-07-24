@@ -3,7 +3,7 @@ import { TaskCallback } from './TaskCallback';
 import { TaskInput } from './TaskInput';
 import { TaskOutput } from './TaskOutput';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowVideoSummarizationAnalysisTaskResponse extends SdkResponse {
     private 'task_id'?: string | undefined;

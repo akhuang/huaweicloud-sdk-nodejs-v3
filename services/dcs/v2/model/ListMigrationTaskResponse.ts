@@ -1,6 +1,6 @@
 import { MigrationTaskList } from './MigrationTaskList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListMigrationTaskResponse extends SdkResponse {
     public count?: number;

@@ -1,6 +1,6 @@
 import { TakeOverTask } from './TakeOverTask';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListTakeOverTaskResponse extends SdkResponse {
     public tasks?: Array<TakeOverTask>;

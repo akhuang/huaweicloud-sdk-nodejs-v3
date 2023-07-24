@@ -1,6 +1,6 @@
 import { UpdateCredentialResult } from './UpdateCredentialResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdatePermanentAccessKeyResponse extends SdkResponse {
     public credential?: UpdateCredentialResult;

@@ -2,7 +2,7 @@ import { BlockPage } from './BlockPage';
 import { Flag } from './Flag';
 import { PremiumWafServer } from './PremiumWafServer';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreatePremiumHostResponse extends SdkResponse {
     public id?: string;

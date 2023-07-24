@@ -1,6 +1,6 @@
 import { FlavorsItems } from './FlavorsItems';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListFlavorsResponse extends SdkResponse {
     public flavors?: Array<FlavorsItems>;

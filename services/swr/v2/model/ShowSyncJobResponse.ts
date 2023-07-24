@@ -1,6 +1,6 @@
 import { SyncJob } from './SyncJob';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowSyncJobResponse extends SdkResponse {
     public body?: Array<SyncJob>;

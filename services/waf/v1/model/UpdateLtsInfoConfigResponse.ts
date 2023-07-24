@@ -1,6 +1,6 @@
 import { LtsIdInfo } from './LtsIdInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateLtsInfoConfigResponse extends SdkResponse {
     public id?: string;

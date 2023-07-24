@@ -1,6 +1,6 @@
 import { ChannelDetail } from './ChannelDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateRuleActionResponse extends SdkResponse {
     private 'action_id'?: string | undefined;

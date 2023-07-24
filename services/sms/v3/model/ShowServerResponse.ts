@@ -6,7 +6,7 @@ import { ServerDisk } from './ServerDisk';
 import { TaskByServerSource } from './TaskByServerSource';
 import { VolumeGroups } from './VolumeGroups';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowServerResponse extends SdkResponse {
     public id?: string;

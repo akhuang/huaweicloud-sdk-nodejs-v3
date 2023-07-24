@@ -1,7 +1,7 @@
 import { QueryError } from './QueryError';
 import { TagList } from './TagList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListEndpointInfoDetailsResponse extends SdkResponse {
     public id?: string;

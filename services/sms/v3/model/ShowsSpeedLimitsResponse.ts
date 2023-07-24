@@ -1,6 +1,6 @@
 import { SpeedLimitlJson } from './SpeedLimitlJson';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowsSpeedLimitsResponse extends SdkResponse {
     private 'speed_limit'?: Array<SpeedLimitlJson> | undefined;

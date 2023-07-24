@@ -1,6 +1,6 @@
 import { MappingResult } from './MappingResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneShowMappingResponse extends SdkResponse {
     public mapping?: MappingResult;

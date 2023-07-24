@@ -1,7 +1,7 @@
 import { FuncReservedInstance } from './FuncReservedInstance';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListFunctionReservedInstancesResponse extends SdkResponse {
     public reservedinstances?: Array<FuncReservedInstance>;

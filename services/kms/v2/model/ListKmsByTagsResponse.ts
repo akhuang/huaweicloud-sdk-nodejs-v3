@@ -1,6 +1,6 @@
 import { ActionResources } from './ActionResources';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListKmsByTagsResponse extends SdkResponse {
     public resources?: Array<ActionResources>;

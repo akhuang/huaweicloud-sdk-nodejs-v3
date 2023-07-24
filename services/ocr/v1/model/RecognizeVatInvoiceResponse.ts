@@ -1,6 +1,6 @@
 import { VatInvoiceResult } from './VatInvoiceResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeVatInvoiceResponse extends SdkResponse {
     public result?: VatInvoiceResult;

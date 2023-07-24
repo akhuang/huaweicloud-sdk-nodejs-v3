@@ -1,7 +1,7 @@
 import { IvsStandardByIdCardImageResponseBodyResult } from './IvsStandardByIdCardImageResponseBodyResult';
 import { Meta } from './Meta';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DetectStandardByIdCardImageResponse extends SdkResponse {
     public meta?: Meta;

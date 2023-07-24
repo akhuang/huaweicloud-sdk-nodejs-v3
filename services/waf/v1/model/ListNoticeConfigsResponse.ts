@@ -1,6 +1,6 @@
 import { AlertNoticeConfigResponse } from './AlertNoticeConfigResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListNoticeConfigsResponse extends SdkResponse {
     public total?: number;

@@ -1,6 +1,6 @@
 import { ShowNamespace } from './ShowNamespace';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListNamespacesResponse extends SdkResponse {
     public namespaces?: Array<ShowNamespace>;

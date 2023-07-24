@@ -1,6 +1,6 @@
 import { AssetInfo } from './AssetInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowAssetMetaResponse extends SdkResponse {
     private 'asset_info_array'?: Array<AssetInfo> | undefined;

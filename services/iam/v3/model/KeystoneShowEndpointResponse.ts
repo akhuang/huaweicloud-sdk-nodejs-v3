@@ -1,6 +1,6 @@
 import { Endpoint } from './Endpoint';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneShowEndpointResponse extends SdkResponse {
     public endpoint?: Endpoint;

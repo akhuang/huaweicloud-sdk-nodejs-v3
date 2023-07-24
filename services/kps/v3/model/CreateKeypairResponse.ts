@@ -1,6 +1,6 @@
 import { CreateKeypairResp } from './CreateKeypairResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateKeypairResponse extends SdkResponse {
     public keypair?: CreateKeypairResp;

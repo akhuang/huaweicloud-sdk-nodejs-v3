@@ -1,6 +1,6 @@
 import { SecurityGroup } from './SecurityGroup';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateSecurityGroupResponse extends SdkResponse {
     private 'security_group'?: SecurityGroup | undefined;

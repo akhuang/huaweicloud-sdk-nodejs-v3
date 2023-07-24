@@ -3,7 +3,7 @@ import { SourceServerResponse } from './SourceServerResponse';
 import { SubTask } from './SubTask';
 import { TaskTargetServer } from './TaskTargetServer';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowTaskResponse extends SdkResponse {
     public name?: string;

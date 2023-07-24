@@ -1,7 +1,7 @@
 import { AdditionalProperties } from './AdditionalProperties';
 import { Links } from './Links';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class GlanceShowImageSchemasResponse extends SdkResponse {
     public additionalProperties?: AdditionalProperties;

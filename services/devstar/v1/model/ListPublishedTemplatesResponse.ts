@@ -1,6 +1,6 @@
 import { TemplateSimpleInfo } from './TemplateSimpleInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListPublishedTemplatesResponse extends SdkResponse {
     public count?: number;

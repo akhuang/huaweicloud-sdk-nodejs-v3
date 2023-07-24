@@ -1,6 +1,6 @@
 import { CountItem } from './CountItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListStatisticsResponse extends SdkResponse {
     public body?: Array<CountItem>;

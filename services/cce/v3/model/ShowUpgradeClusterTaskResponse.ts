@@ -2,7 +2,7 @@ import { UpgradeTaskMetadata } from './UpgradeTaskMetadata';
 import { UpgradeTaskSpec } from './UpgradeTaskSpec';
 import { UpgradeTaskStatus } from './UpgradeTaskStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowUpgradeClusterTaskResponse extends SdkResponse {
     public apiVersion?: string;

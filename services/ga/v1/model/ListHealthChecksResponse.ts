@@ -1,7 +1,7 @@
 import { HealthCheckDetail } from './HealthCheckDetail';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListHealthChecksResponse extends SdkResponse {
     private 'health_checks'?: Array<HealthCheckDetail> | undefined;

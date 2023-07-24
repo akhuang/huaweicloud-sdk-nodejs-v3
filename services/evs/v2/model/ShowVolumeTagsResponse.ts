@@ -1,6 +1,6 @@
 import { Tag } from './Tag';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowVolumeTagsResponse extends SdkResponse {
     public tags?: Array<Tag>;

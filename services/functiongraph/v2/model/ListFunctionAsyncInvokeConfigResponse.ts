@@ -1,7 +1,7 @@
 import { ListFunctionAsyncInvokeConfigResult } from './ListFunctionAsyncInvokeConfigResult';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListFunctionAsyncInvokeConfigResponse extends SdkResponse {
     private 'async_invoke_configs'?: Array<ListFunctionAsyncInvokeConfigResult> | undefined;

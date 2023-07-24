@@ -1,6 +1,6 @@
 import { RouteTable } from './RouteTable';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowRouteTableResponse extends SdkResponse {
     private 'route_table'?: RouteTable | undefined;

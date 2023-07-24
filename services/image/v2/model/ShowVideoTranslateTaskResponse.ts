@@ -3,7 +3,7 @@ import { TaskInput } from './TaskInput';
 import { TaskOutput } from './TaskOutput';
 import { VideoTranslateConfig } from './VideoTranslateConfig';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowVideoTranslateTaskResponse extends SdkResponse {
     private 'task_id'?: string | undefined;

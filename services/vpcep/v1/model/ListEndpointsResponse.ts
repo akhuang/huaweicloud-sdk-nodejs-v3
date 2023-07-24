@@ -1,6 +1,6 @@
 import { EndpointResp } from './EndpointResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListEndpointsResponse extends SdkResponse {
     public endpoints?: Array<EndpointResp>;

@@ -1,7 +1,7 @@
 import { BaseInfo } from './BaseInfo';
 import { TranscodeInfo } from './TranscodeInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowTakeOverAssetDetailsResponse extends SdkResponse {
     private 'asset_id'?: string | undefined;

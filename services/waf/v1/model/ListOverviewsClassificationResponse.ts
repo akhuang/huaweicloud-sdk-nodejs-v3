@@ -4,7 +4,7 @@ import { GeoClassificationItem } from './GeoClassificationItem';
 import { IpClassificationItem } from './IpClassificationItem';
 import { UrlClassificationItem } from './UrlClassificationItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListOverviewsClassificationResponse extends SdkResponse {
     public domain?: DomainClassificationItem;

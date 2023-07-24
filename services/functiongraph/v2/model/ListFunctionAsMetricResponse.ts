@@ -1,6 +1,6 @@
 import { FunctionMetric } from './FunctionMetric';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListFunctionAsMetricResponse extends SdkResponse {
     public values?: Array<FunctionMetric>;

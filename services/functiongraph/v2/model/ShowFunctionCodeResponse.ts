@@ -2,7 +2,7 @@ import { Dependency } from './Dependency';
 import { FuncCode } from './FuncCode';
 import { StrategyConfig } from './StrategyConfig';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowFunctionCodeResponse extends SdkResponse {
     private 'func_urn'?: string | undefined;

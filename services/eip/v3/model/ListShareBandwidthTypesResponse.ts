@@ -1,7 +1,7 @@
 import { PageInfoOption } from './PageInfoOption';
 import { ShareBandwidthTypeShowResp } from './ShareBandwidthTypeShowResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListShareBandwidthTypesResponse extends SdkResponse {
     private 'share_bandwidth_types'?: Array<ShareBandwidthTypeShowResp> | undefined;

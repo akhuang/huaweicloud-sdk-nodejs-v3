@@ -1,6 +1,6 @@
 import { StackEvent } from './StackEvent';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListStackEventsResponse extends SdkResponse {
     private 'stack_events'?: Array<StackEvent> | undefined;

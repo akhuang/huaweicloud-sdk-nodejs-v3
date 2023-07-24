@@ -1,6 +1,6 @@
 import { GlanceShowImageResponseBody } from './GlanceShowImageResponseBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class GlanceListImagesResponse extends SdkResponse {
     public first?: string;

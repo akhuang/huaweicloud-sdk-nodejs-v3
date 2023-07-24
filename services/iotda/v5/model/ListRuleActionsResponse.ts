@@ -1,6 +1,6 @@
 import { RoutingRuleAction } from './RoutingRuleAction';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRuleActionsResponse extends SdkResponse {
     public actions?: Array<RoutingRuleAction>;

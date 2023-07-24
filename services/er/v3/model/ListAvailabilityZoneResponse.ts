@@ -1,6 +1,6 @@
 import { AvailableZone } from './AvailableZone';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListAvailabilityZoneResponse extends SdkResponse {
     private 'availability_zones'?: Array<AvailableZone> | undefined;

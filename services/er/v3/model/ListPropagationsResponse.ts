@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { Propagation } from './Propagation';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListPropagationsResponse extends SdkResponse {
     public propagations?: Array<Propagation>;

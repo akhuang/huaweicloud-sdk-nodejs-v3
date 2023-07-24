@@ -1,6 +1,6 @@
 import { ComandParam } from './ComandParam';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowCommandResponse extends SdkResponse {
     private 'command_name'?: string | undefined;

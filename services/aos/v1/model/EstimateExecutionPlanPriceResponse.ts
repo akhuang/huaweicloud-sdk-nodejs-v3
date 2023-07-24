@@ -1,6 +1,6 @@
 import { ItemsResponse } from './ItemsResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class EstimateExecutionPlanPriceResponse extends SdkResponse {
     public currency?: EstimateExecutionPlanPriceResponseCurrencyEnum;

@@ -1,6 +1,6 @@
 import { Quota } from './Quota';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowImageQuotaResponse extends SdkResponse {
     public quotas?: Quota;

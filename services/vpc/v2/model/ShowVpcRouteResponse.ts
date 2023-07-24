@@ -1,6 +1,6 @@
 import { VpcRoute } from './VpcRoute';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowVpcRouteResponse extends SdkResponse {
     public route?: VpcRoute;

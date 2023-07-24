@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { Pool } from './Pool';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListPoolsResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

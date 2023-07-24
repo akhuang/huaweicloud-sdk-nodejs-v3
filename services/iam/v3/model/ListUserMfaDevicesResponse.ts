@@ -1,6 +1,6 @@
 import { MfaDeviceResult } from './MfaDeviceResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListUserMfaDevicesResponse extends SdkResponse {
     private 'virtual_mfa_devices'?: Array<MfaDeviceResult> | undefined;

@@ -1,6 +1,6 @@
 import { LoginPolicyResult } from './LoginPolicyResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowDomainLoginPolicyResponse extends SdkResponse {
     private 'login_policy'?: LoginPolicyResult | undefined;

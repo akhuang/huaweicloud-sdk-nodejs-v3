@@ -1,7 +1,7 @@
 import { Advanced } from './Advanced';
 import { Condition } from './Condition';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DeleteIgnoreRuleResponse extends SdkResponse {
     public id?: string;

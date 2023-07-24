@@ -2,7 +2,7 @@ import { JobMetadata } from './JobMetadata';
 import { JobSpec } from './JobSpec';
 import { JobStatus } from './JobStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowJobResponse extends SdkResponse {
     public kind?: string;

@@ -1,6 +1,6 @@
 import { FlowLogResp } from './FlowLogResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateFlowLogResponse extends SdkResponse {
     private 'flow_log'?: FlowLogResp | undefined;

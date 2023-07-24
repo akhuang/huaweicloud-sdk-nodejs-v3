@@ -1,6 +1,6 @@
 import { Instances } from './Instances';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateInstanceResponse extends SdkResponse {
     private 'order_id'?: string | undefined;

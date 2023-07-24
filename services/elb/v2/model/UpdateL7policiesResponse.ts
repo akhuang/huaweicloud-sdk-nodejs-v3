@@ -1,6 +1,6 @@
 import { L7policyResp } from './L7policyResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateL7policiesResponse extends SdkResponse {
     public l7policy?: L7policyResp;

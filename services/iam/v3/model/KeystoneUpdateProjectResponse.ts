@@ -1,6 +1,6 @@
 import { KeystoneUpdateProjectResult } from './KeystoneUpdateProjectResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneUpdateProjectResponse extends SdkResponse {
     public project?: KeystoneUpdateProjectResult;

@@ -1,7 +1,7 @@
 import { ErrorInfoDTO } from './ErrorInfoDTO';
 import { PropertiesDTO } from './PropertiesDTO';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowDeviceMessageResponse extends SdkResponse {
     private 'message_id'?: string | undefined;

@@ -1,6 +1,6 @@
 import { CreateMfaDeviceRespon } from './CreateMfaDeviceRespon';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateMfaDeviceResponse extends SdkResponse {
     private 'virtual_mfa_device'?: CreateMfaDeviceRespon | undefined;

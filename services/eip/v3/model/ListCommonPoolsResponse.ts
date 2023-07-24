@@ -1,6 +1,6 @@
 import { CommonPoolDict } from './CommonPoolDict';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListCommonPoolsResponse extends SdkResponse {
     private 'common_pools'?: Array<CommonPoolDict> | undefined;

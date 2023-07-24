@@ -1,7 +1,7 @@
 import { DeviceGroupResponseDTO } from './DeviceGroupResponseDTO';
 import { Page } from './Page';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListDeviceGroupsResponse extends SdkResponse {
     private 'device_groups'?: Array<DeviceGroupResponseDTO> | undefined;

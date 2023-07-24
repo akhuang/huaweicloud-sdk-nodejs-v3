@@ -1,6 +1,6 @@
 import { LoadbalancerResp } from './LoadbalancerResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateLoadbalancerResponse extends SdkResponse {
     public loadbalancer?: LoadbalancerResp;

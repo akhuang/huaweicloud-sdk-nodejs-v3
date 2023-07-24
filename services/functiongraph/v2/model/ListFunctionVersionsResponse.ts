@@ -1,6 +1,6 @@
 import { ListFunctionVersionResult } from './ListFunctionVersionResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListFunctionVersionsResponse extends SdkResponse {
     public versions?: Array<ListFunctionVersionResult>;

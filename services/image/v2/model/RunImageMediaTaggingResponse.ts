@@ -1,6 +1,6 @@
 import { ImageMediaTaggingResponseResult } from './ImageMediaTaggingResponseResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunImageMediaTaggingResponse extends SdkResponse {
     public result?: ImageMediaTaggingResponseResult;

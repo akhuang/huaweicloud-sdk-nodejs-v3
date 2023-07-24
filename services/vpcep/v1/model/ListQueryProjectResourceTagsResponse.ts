@@ -1,6 +1,6 @@
 import { TagValuesList } from './TagValuesList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListQueryProjectResourceTagsResponse extends SdkResponse {
     public tags?: Array<TagValuesList>;

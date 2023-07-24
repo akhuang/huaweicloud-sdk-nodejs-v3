@@ -1,6 +1,6 @@
 import { AcceleratorDetail } from './AcceleratorDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateAcceleratorResponse extends SdkResponse {
     public accelerator?: AcceleratorDetail;

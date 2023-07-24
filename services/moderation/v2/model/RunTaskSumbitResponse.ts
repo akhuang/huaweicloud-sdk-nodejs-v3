@@ -1,6 +1,6 @@
 import { TaskSumbitResponseResult } from './TaskSumbitResponseResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunTaskSumbitResponse extends SdkResponse {
     public result?: TaskSumbitResponseResult;

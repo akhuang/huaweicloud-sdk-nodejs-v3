@@ -1,6 +1,6 @@
 import { QuotaInvoiceResult } from './QuotaInvoiceResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeQuotaInvoiceResponse extends SdkResponse {
     public result?: QuotaInvoiceResult;

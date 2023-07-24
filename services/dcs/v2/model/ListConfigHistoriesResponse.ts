@@ -1,6 +1,6 @@
 import { HistoryInfo } from './HistoryInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListConfigHistoriesResponse extends SdkResponse {
     private 'history_num'?: number | undefined;

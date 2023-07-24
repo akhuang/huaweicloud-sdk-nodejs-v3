@@ -1,6 +1,6 @@
 import { BatchCopyResultVo } from './BatchCopyResultVo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchCopyDomainResponse extends SdkResponse {
     public result?: Array<BatchCopyResultVo>;

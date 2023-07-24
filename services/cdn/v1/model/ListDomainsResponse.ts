@@ -1,6 +1,6 @@
 import { Domains } from './Domains';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListDomainsResponse extends SdkResponse {
     public total?: number;

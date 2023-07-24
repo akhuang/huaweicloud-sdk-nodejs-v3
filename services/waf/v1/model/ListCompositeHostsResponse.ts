@@ -1,6 +1,6 @@
 import { CompositeHostResponse } from './CompositeHostResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListCompositeHostsResponse extends SdkResponse {
     public total?: number;

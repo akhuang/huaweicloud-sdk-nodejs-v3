@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { Route } from './Route';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListStaticRoutesResponse extends SdkResponse {
     public routes?: Array<Route>;

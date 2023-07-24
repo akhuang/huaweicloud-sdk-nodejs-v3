@@ -4,7 +4,7 @@ import { InstancesMonitoredObject } from './InstancesMonitoredObject';
 import { Proxy2NodeMonitoredObject } from './Proxy2NodeMonitoredObject';
 import { ProxyNodeMonitoredObject } from './ProxyNodeMonitoredObject';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
     public router?: Array<string>;

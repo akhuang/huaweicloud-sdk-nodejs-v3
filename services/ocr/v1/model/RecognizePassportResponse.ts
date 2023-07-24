@@ -1,6 +1,6 @@
 import { PassportResult } from './PassportResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizePassportResponse extends SdkResponse {
     public result?: PassportResult;

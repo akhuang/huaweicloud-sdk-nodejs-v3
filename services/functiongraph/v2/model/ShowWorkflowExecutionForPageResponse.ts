@@ -1,6 +1,6 @@
 import { FlowExecutionBriefV2 } from './FlowExecutionBriefV2';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowWorkflowExecutionForPageResponse extends SdkResponse {
     public total?: number;

@@ -5,7 +5,7 @@ import { PremiumWafServer } from './PremiumWafServer';
 import { TimeoutConfig } from './TimeoutConfig';
 import { TrafficMark } from './TrafficMark';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdatePremiumHostResponse extends SdkResponse {
     public id?: string;

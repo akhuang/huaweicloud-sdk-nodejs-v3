@@ -1,6 +1,6 @@
 import { Follow302StatusBody } from './Follow302StatusBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateFollow302SwitchResponse extends SdkResponse {
     private 'follow_status'?: Follow302StatusBody | undefined;

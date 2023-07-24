@@ -1,6 +1,6 @@
 import { FailedTasks } from './FailedTasks';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListFailedTaskResponse extends SdkResponse {
     public total?: number;

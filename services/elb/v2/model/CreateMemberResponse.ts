@@ -1,6 +1,6 @@
 import { MemberResp } from './MemberResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateMemberResponse extends SdkResponse {
     public member?: MemberResp;

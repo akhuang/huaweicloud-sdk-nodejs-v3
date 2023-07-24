@@ -1,6 +1,6 @@
 import { FlightItineraryResult } from './FlightItineraryResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeFlightItineraryResponse extends SdkResponse {
     public result?: FlightItineraryResult;

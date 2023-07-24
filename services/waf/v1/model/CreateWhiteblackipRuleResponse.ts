@@ -1,6 +1,6 @@
 import { IpGroup } from './IpGroup';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateWhiteblackipRuleResponse extends SdkResponse {
     public id?: string;

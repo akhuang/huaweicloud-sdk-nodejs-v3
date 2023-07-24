@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { VpcAttachmentDetails } from './VpcAttachmentDetails';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListVpcAttachmentsResponse extends SdkResponse {
     private 'vpc_attachments'?: Array<VpcAttachmentDetails> | undefined;

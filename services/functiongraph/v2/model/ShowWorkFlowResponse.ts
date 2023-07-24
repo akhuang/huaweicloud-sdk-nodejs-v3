@@ -1,6 +1,6 @@
 import { WorkflowCreateBody } from './WorkflowCreateBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowWorkFlowResponse extends SdkResponse {
     public id?: string;

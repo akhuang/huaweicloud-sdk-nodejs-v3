@@ -1,6 +1,6 @@
 import { PipelineStageResp } from './PipelineStageResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowPipelineLastStatusV2Response extends SdkResponse {
     private 'pipeline_id'?: string | undefined;

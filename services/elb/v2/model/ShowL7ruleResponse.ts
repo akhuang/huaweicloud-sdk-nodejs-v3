@@ -1,6 +1,6 @@
 import { L7ruleResp } from './L7ruleResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowL7ruleResponse extends SdkResponse {
     public rule?: L7ruleResp;

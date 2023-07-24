@@ -1,6 +1,6 @@
 import { DiagnosisReportInfo } from './DiagnosisReportInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListDiagnosisTasksResponse extends SdkResponse {
     private 'diagnosis_report_list'?: Array<DiagnosisReportInfo> | undefined;

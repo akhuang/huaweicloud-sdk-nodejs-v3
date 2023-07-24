@@ -2,7 +2,7 @@ import { Page } from './Page';
 import { Task } from './Task';
 import { TaskDetail } from './TaskDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowBatchTaskResponse extends SdkResponse {
     public batchtask?: Task;

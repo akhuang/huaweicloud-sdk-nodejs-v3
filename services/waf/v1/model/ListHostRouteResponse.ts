@@ -1,6 +1,6 @@
 import { RouteBody } from './RouteBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListHostRouteResponse extends SdkResponse {
     public total?: number;

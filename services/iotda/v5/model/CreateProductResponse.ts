@@ -1,6 +1,6 @@
 import { ServiceCapability } from './ServiceCapability';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CreateProductResponse extends SdkResponse {
     private 'app_id'?: string | undefined;

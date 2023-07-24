@@ -1,7 +1,7 @@
 import { Page } from './Page';
 import { QueryQueueBase } from './QueryQueueBase';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchShowQueueResponse extends SdkResponse {
     public queues?: Array<QueryQueueBase>;

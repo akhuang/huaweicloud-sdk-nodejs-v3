@@ -1,6 +1,6 @@
 import { PublicipShowResp } from './PublicipShowResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowPublicipResponse extends SdkResponse {
     public publicip?: PublicipShowResp;

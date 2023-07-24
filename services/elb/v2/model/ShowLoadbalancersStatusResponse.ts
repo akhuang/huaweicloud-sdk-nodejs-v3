@@ -1,6 +1,6 @@
 import { StatusResp } from './StatusResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowLoadbalancersStatusResponse extends SdkResponse {
     public statuses?: StatusResp;

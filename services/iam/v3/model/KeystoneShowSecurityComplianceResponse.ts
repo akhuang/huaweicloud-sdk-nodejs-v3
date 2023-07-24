@@ -1,6 +1,6 @@
 import { Config } from './Config';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneShowSecurityComplianceResponse extends SdkResponse {
     public config?: Config;

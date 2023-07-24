@@ -1,6 +1,6 @@
 import { ThailandLicensePlateItem } from './ThailandLicensePlateItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeThailandLicensePlateResponse extends SdkResponse {
     public result?: Array<ThailandLicensePlateItem>;

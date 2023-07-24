@@ -1,6 +1,6 @@
 import { ImageDetectionResultBody } from './ImageDetectionResultBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunImageModerationResponse extends SdkResponse {
     public result?: ImageDetectionResultBody;

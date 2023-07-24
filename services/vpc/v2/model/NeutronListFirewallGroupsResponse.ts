@@ -1,7 +1,7 @@
 import { NeutronFirewallGroup } from './NeutronFirewallGroup';
 import { NeutronPageLink } from './NeutronPageLink';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class NeutronListFirewallGroupsResponse extends SdkResponse {
     private 'firewall_groups'?: Array<NeutronFirewallGroup> | undefined;

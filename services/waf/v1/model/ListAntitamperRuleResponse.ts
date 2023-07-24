@@ -1,6 +1,6 @@
 import { AntiTamperRuleResponseBody } from './AntiTamperRuleResponseBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListAntitamperRuleResponse extends SdkResponse {
     public total?: number;

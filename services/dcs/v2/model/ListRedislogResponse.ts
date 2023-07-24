@@ -1,6 +1,6 @@
 import { RunlogItem } from './RunlogItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRedislogResponse extends SdkResponse {
     private 'total_num'?: number | undefined;

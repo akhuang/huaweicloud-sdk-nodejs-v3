@@ -1,7 +1,7 @@
 import { Premium } from './Premium';
 import { ResourceResponse } from './ResourceResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowSubscriptionInfoResponse extends SdkResponse {
     public type?: number;

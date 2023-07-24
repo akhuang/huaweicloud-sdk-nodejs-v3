@@ -1,6 +1,6 @@
 import { TaxiInvoiceResult } from './TaxiInvoiceResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeTaxiInvoiceResponse extends SdkResponse {
     public result?: TaxiInvoiceResult;

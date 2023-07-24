@@ -1,6 +1,6 @@
 import { BusinessLicenseResult } from './BusinessLicenseResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeBusinessLicenseResponse extends SdkResponse {
     public result?: BusinessLicenseResult;

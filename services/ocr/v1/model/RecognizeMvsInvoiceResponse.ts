@@ -1,6 +1,6 @@
 import { MvsInvoiceResult } from './MvsInvoiceResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeMvsInvoiceResponse extends SdkResponse {
     public result?: MvsInvoiceResult;

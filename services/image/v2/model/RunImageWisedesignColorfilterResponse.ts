@@ -1,6 +1,6 @@
 import { ImageWisedesignColorfilterResponseResult } from './ImageWisedesignColorfilterResponseResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunImageWisedesignColorfilterResponse extends SdkResponse {
     public result?: ImageWisedesignColorfilterResponseResult;

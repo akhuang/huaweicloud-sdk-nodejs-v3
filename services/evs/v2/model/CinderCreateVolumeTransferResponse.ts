@@ -1,6 +1,6 @@
 import { CreateVolumeTransferDetail } from './CreateVolumeTransferDetail';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class CinderCreateVolumeTransferResponse extends SdkResponse {
     public transfer?: CreateVolumeTransferDetail;

@@ -1,6 +1,6 @@
 import { RuleId } from './RuleId';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DeleteRuleAclUsingDeleteResponse extends SdkResponse {
     public data?: RuleId;

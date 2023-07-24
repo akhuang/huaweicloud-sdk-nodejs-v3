@@ -1,6 +1,6 @@
 import { OpenIdConnectConfig } from './OpenIdConnectConfig';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowOpenIdConnectConfigResponse extends SdkResponse {
     private 'openid_connect_config'?: OpenIdConnectConfig | undefined;

@@ -1,6 +1,6 @@
 import { NovaKeypair } from './NovaKeypair';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class NovaCreateKeypairResponse extends SdkResponse {
     public keypair?: NovaKeypair;

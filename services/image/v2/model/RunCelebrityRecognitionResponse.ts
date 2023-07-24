@@ -1,6 +1,6 @@
 import { CelebrityRecognitionResultBody } from './CelebrityRecognitionResultBody';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunCelebrityRecognitionResponse extends SdkResponse {
     public result?: Array<CelebrityRecognitionResultBody>;

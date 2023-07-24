@@ -1,6 +1,6 @@
 import { SlowlogItem } from './SlowlogItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListSlowlogResponse extends SdkResponse {
     public count?: number;

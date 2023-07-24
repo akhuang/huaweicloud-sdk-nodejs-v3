@@ -1,6 +1,6 @@
 import { NovaListKeypairsResult } from './NovaListKeypairsResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class NovaListKeypairsResponse extends SdkResponse {
     public keypairs?: Array<NovaListKeypairsResult>;

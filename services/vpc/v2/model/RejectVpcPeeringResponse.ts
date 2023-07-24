@@ -1,6 +1,6 @@
 import { VpcInfo } from './VpcInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RejectVpcPeeringResponse extends SdkResponse {
     public id?: string;

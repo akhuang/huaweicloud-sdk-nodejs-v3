@@ -6,7 +6,7 @@ import { Flag } from './Flag';
 import { TimeoutConfig } from './TimeoutConfig';
 import { TrafficMark } from './TrafficMark';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateHostResponse extends SdkResponse {
     public id?: string;

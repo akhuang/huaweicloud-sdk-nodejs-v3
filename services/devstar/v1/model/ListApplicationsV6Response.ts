@@ -1,6 +1,6 @@
 import { ApplicationV3 } from './ApplicationV3';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListApplicationsV6Response extends SdkResponse {
     public applications?: Array<ApplicationV3>;

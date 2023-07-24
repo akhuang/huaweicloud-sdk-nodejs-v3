@@ -1,6 +1,6 @@
 import { TaskSteps } from './TaskSteps';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowEngineJobResponse extends SdkResponse {
     public id?: number;

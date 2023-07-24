@@ -1,6 +1,6 @@
 import { StatusStatistic } from './StatusStatistic';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse {
     public redis?: StatusStatistic;

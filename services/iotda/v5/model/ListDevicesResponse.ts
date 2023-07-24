@@ -1,7 +1,7 @@
 import { Page } from './Page';
 import { QueryDeviceSimplify } from './QueryDeviceSimplify';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListDevicesResponse extends SdkResponse {
     public devices?: Array<QueryDeviceSimplify>;

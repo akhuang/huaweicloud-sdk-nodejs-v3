@@ -1,6 +1,6 @@
 import { HealthmonitorResp } from './HealthmonitorResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateHealthmonitorResponse extends SdkResponse {
     public healthmonitor?: HealthmonitorResp;

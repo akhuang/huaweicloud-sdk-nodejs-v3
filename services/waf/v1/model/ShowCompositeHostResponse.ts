@@ -2,7 +2,7 @@ import { AccessProgress } from './AccessProgress';
 import { Flag } from './Flag';
 import { PremiumWafInstances } from './PremiumWafInstances';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowCompositeHostResponse extends SdkResponse {
     public id?: string;

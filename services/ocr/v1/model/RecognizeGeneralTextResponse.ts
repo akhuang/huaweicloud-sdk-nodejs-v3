@@ -1,6 +1,6 @@
 import { GeneralTextResult } from './GeneralTextResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeGeneralTextResponse extends SdkResponse {
     public result?: GeneralTextResult;

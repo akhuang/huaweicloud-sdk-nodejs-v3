@@ -1,7 +1,7 @@
 import { AuthInfo } from './AuthInfo';
 import { TagV5DTO } from './TagV5DTO';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowDeviceResponse extends SdkResponse {
     private 'app_id'?: string | undefined;

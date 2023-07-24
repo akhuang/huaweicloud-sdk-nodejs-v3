@@ -1,6 +1,6 @@
 import { UpdateLoginProtectRespon } from './UpdateLoginProtectRespon';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateLoginProtectResponse extends SdkResponse {
     private 'login_protect'?: UpdateLoginProtectRespon | undefined;

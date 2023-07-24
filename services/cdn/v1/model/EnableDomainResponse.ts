@@ -1,6 +1,6 @@
 import { DomainsWithPort } from './DomainsWithPort';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class EnableDomainResponse extends SdkResponse {
     public domain?: DomainsWithPort;

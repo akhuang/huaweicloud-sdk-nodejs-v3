@@ -1,6 +1,6 @@
 import { VpcPeering } from './VpcPeering';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateVpcPeeringResponse extends SdkResponse {
     public peering?: VpcPeering;

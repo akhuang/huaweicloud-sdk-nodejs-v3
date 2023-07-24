@@ -1,6 +1,6 @@
 import { ApiVersionInfo } from './ApiVersionInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListApiVersionsResponse extends SdkResponse {
     public versions?: Array<ApiVersionInfo>;

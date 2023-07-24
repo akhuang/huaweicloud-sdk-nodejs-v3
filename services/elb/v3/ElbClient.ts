@@ -1,6 +1,6 @@
-import { HcClient } from "@huaweicloud/huaweicloud-sdk-core/HcClient";
-import { ClientBuilder } from "@huaweicloud/huaweicloud-sdk-core/ClientBuilder";
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { HcClient } from "@huaweicloudtest/huaweicloud-sdk-core/HcClient";
+import { ClientBuilder } from "@huaweicloudtest/huaweicloud-sdk-core/ClientBuilder";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 import { ApiVersionInfo } from './model/ApiVersionInfo';
 import { AutoscalingRef } from './model/AutoscalingRef';

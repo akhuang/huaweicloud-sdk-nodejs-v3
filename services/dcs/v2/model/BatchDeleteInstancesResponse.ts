@@ -1,6 +1,6 @@
 import { BatchOpsResult } from './BatchOpsResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchDeleteInstancesResponse extends SdkResponse {
     public results?: Array<BatchOpsResult>;

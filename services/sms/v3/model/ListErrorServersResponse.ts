@@ -1,6 +1,6 @@
 import { MigrationErrors } from './MigrationErrors';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListErrorServersResponse extends SdkResponse {
     public count?: number;

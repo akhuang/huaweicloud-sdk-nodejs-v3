@@ -1,6 +1,6 @@
 import { ListInstance } from './ListInstance';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListInstanceResponse extends SdkResponse {
     public total?: number;

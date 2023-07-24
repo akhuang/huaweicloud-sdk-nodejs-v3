@@ -1,6 +1,6 @@
 import { VersionObject } from './VersionObject';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListSpecifiedVersionDetailsResponse extends SdkResponse {
     public version?: VersionObject;

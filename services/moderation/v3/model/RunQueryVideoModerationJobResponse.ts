@@ -1,7 +1,7 @@
 import { VideoModerationResultRequestParams } from './VideoModerationResultRequestParams';
 import { VideoModerationResultResult } from './VideoModerationResultResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunQueryVideoModerationJobResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

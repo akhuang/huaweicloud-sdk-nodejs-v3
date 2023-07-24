@@ -1,6 +1,6 @@
 import { ListTag } from './ListTag';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListListenerTagsResponse extends SdkResponse {
     public tags?: Array<ListTag>;

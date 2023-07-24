@@ -1,6 +1,6 @@
 import { ApplicationEndpoint } from './ApplicationEndpoint';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListApplicationEndpointsResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

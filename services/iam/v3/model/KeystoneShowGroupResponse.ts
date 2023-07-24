@@ -1,6 +1,6 @@
 import { KeystoneGroupResult } from './KeystoneGroupResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneShowGroupResponse extends SdkResponse {
     public group?: KeystoneGroupResult;

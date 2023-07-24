@@ -1,6 +1,6 @@
 import { KeyDetails } from './KeyDetails';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListKeyDetailResponse extends SdkResponse {
     private 'key_info'?: KeyDetails | undefined;

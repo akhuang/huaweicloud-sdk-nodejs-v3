@@ -2,7 +2,7 @@ import { NodeMetadata } from './NodeMetadata';
 import { NodeSpec } from './NodeSpec';
 import { NodeStatus } from './NodeStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class DeleteNodeResponse extends SdkResponse {
     public kind?: string;

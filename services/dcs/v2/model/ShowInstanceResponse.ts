@@ -4,7 +4,7 @@ import { Features } from './Features';
 import { InstanceBackupPolicy } from './InstanceBackupPolicy';
 import { ResourceTag } from './ResourceTag';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowInstanceResponse extends SdkResponse {
     private 'vpc_name'?: string | undefined;

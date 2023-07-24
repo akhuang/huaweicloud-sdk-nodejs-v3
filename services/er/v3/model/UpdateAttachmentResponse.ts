@@ -1,6 +1,6 @@
 import { AttachmentResponse } from './AttachmentResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateAttachmentResponse extends SdkResponse {
     public attachment?: AttachmentResponse;

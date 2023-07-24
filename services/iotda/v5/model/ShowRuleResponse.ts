@@ -2,7 +2,7 @@ import { ConditionGroup } from './ConditionGroup';
 import { DeviceSide } from './DeviceSide';
 import { RuleAction } from './RuleAction';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowRuleResponse extends SdkResponse {
     private 'rule_id'?: string | undefined;

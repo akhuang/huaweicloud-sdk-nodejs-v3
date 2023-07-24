@@ -1,6 +1,6 @@
 import { FaceSetInfo } from './FaceSetInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowAllFaceSetsResponse extends SdkResponse {
     private 'face_sets_info'?: Array<FaceSetInfo> | undefined;

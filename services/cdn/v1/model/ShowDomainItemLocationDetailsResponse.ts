@@ -1,6 +1,6 @@
 import { DomainItemLocationDetails } from './DomainItemLocationDetails';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowDomainItemLocationDetailsResponse extends SdkResponse {
     private 'domain_item_location_details'?: DomainItemLocationDetails | undefined;

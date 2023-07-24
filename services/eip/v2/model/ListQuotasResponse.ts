@@ -1,6 +1,6 @@
 import { ResourceResp } from './ResourceResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListQuotasResponse extends SdkResponse {
     public quotas?: ResourceResp;

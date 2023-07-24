@@ -1,6 +1,6 @@
 import { GeneralTableResult } from './GeneralTableResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RecognizeGeneralTableResponse extends SdkResponse {
     public result?: GeneralTableResult;

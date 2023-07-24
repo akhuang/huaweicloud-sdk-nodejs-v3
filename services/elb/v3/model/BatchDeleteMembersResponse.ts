@@ -1,6 +1,6 @@
 import { BatchDeleteMembersState } from './BatchDeleteMembersState';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchDeleteMembersResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

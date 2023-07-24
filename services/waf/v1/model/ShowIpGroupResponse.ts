@@ -1,7 +1,7 @@
 import { RuleInfo } from './RuleInfo';
 import { ShareInfo } from './ShareInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowIpGroupResponse extends SdkResponse {
     public id?: string;

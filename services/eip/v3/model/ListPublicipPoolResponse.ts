@@ -1,7 +1,7 @@
 import { PageInfoOption } from './PageInfoOption';
 import { PublicipPoolShowResp } from './PublicipPoolShowResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListPublicipPoolResponse extends SdkResponse {
     private 'publicip_pools'?: Array<PublicipPoolShowResp> | undefined;

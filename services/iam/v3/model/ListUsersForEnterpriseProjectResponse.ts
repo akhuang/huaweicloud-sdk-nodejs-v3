@@ -1,6 +1,6 @@
 import { ListUsersForEnterpriseProjectResUsers } from './ListUsersForEnterpriseProjectResUsers';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListUsersForEnterpriseProjectResponse extends SdkResponse {
     public users?: Array<ListUsersForEnterpriseProjectResUsers>;

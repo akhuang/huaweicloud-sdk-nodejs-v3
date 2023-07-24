@@ -1,6 +1,6 @@
 import { ShowReposTagResp } from './ShowReposTagResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRepositoryTagsResponse extends SdkResponse {
     public body?: Array<ShowReposTagResp>;

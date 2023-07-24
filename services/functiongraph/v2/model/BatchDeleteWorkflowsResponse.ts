@@ -1,6 +1,6 @@
 import { OperateErrorInfo } from './OperateErrorInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class BatchDeleteWorkflowsResponse extends SdkResponse {
     public success?: Array<string>;

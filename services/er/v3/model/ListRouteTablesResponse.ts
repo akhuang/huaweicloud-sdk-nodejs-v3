@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { RouteTable } from './RouteTable';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRouteTablesResponse extends SdkResponse {
     private 'route_tables'?: Array<RouteTable> | undefined;

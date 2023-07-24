@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { VersionMetadata } from './VersionMetadata';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListSecretVersionsResponse extends SdkResponse {
     private 'version_metadatas'?: Array<VersionMetadata> | undefined;

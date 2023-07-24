@@ -1,6 +1,6 @@
 import { UpdateDomainProtectPolicyResponseBodyProtectPolicy } from './UpdateDomainProtectPolicyResponseBodyProtectPolicy';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateDomainProtectPolicyResponse extends SdkResponse {
     private 'protect_policy'?: UpdateDomainProtectPolicyResponseBodyProtectPolicy | undefined;

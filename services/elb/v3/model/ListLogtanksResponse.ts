@@ -1,7 +1,7 @@
 import { Logtank } from './Logtank';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListLogtanksResponse extends SdkResponse {
     public logtanks?: Array<Logtank>;

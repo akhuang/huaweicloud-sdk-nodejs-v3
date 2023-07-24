@@ -1,6 +1,6 @@
 import { RuleResponse } from './RuleResponse';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListRulesResponse extends SdkResponse {
     public marker?: string;

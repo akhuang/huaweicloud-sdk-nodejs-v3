@@ -1,6 +1,6 @@
 import { ImageSuperResolutionResponseResult } from './ImageSuperResolutionResponseResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class RunImageSuperResolutionResponse extends SdkResponse {
     public result?: ImageSuperResolutionResponseResult;

@@ -1,6 +1,6 @@
 import { IpsItem } from './IpsItem';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowSourceIpResponse extends SdkResponse {
     private 'source_ip'?: Array<IpsItem> | undefined;

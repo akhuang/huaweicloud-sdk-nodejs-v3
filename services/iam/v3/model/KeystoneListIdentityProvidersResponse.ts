@@ -1,7 +1,7 @@
 import { IdentityprovidersResult } from './IdentityprovidersResult';
 import { Links } from './Links';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneListIdentityProvidersResponse extends SdkResponse {
     private 'identity_providers'?: Array<IdentityprovidersResult> | undefined;

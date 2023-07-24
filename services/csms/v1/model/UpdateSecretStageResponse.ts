@@ -1,6 +1,6 @@
 import { Stage } from './Stage';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateSecretStageResponse extends SdkResponse {
     public stage?: Stage;

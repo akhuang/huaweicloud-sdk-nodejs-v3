@@ -1,6 +1,6 @@
 import { UrlObject } from './UrlObject';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ShowHistoryTaskDetailsResponse extends SdkResponse {
     public id?: string;

@@ -1,6 +1,6 @@
 import { Grants } from './Grants';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class ListGrantsResponse extends SdkResponse {
     public grants?: Array<Grants>;

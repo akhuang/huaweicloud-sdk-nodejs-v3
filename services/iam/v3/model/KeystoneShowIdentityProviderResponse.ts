@@ -1,6 +1,6 @@
 import { IdentityprovidersResult } from './IdentityprovidersResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class KeystoneShowIdentityProviderResponse extends SdkResponse {
     private 'identity_provider'?: IdentityprovidersResult | undefined;

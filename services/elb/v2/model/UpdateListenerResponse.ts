@@ -1,6 +1,6 @@
 import { ListenerResp } from './ListenerResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@huaweicloudtest/huaweicloud-sdk-core/SdkResponse";
 
 export class UpdateListenerResponse extends SdkResponse {
     public listener?: ListenerResp;
